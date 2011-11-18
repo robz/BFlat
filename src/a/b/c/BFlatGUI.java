@@ -131,10 +131,12 @@ public class BFlatGUI {
 			
 			String str = tx[0].getText();
 			ProgramInfo info = new ProgramInfo(str);
-			try { GrammarTester.runProgram(info); } catch (Exception ex) {}
-			
-			tx[1].setText(info.tree);
-			tx[2].setText(""+info.result);
+			try { 
+				GrammarTester.parseProgram(info);
+				tx[1].setText(info.treeText);
+				GrammarTester.runProgram(info); 
+				tx[2].setText(""+info.result);
+			} catch (Exception ex) {}
 		}
 	}
 	

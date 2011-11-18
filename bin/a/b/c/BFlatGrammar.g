@@ -41,7 +41,7 @@ assignment
 term 
   : IDENT | (LPAR! expression RPAR!) | INTEGER | BOOL
   ;
-
+ 
 unary 
   : ('+'! | negation^)* term
   ;

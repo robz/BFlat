@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g 2011-11-18 01:51:57
+// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g 2011-11-18 02:19:43
 
   package a.b.c;
   import java.util.Map;
@@ -69,7 +69,7 @@ public class EvaluatorWalker extends TreeParser {
     public String getGrammarFileName() { return "/v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g"; }
 
 
-      private Map<String, Object> variables = new HashMap <String, Object> ();
+      GrammarTester.Scope scope = new GrammarTester.Scope();
 
 
 
@@ -198,38 +198,22 @@ public class EvaluatorWalker extends TreeParser {
                     match(input, Token.UP, null); 
 
 
-                     
-                          try {
-                            if (variables.containsKey((IDENT1!=null?IDENT1.getText():null)))
-                              throw new Exception("int dec; already declared variable "+(IDENT1!=null?IDENT1.getText():null));
-                            variables.put((IDENT1!=null?IDENT1.getText():null), new Integer(0)); 
-                          } catch(Exception ex) {
-                            BFlatGUI.debugPrint(0, ex.getMessage());
-                          }
-                        
+                     scope.add((IDENT1!=null?IDENT1.getText():null), new Integer(0)); 
 
                     }
                     break;
                 case 2 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:34:5: ^( 'boolean' IDENT )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:25:5: ^( 'boolean' IDENT )
                     {
-                    match(input,32,FOLLOW_32_in_declaration102); 
+                    match(input,32,FOLLOW_32_in_declaration97); 
 
                     match(input, Token.DOWN, null); 
-                    IDENT2=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_declaration104); 
+                    IDENT2=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_declaration99); 
 
                     match(input, Token.UP, null); 
 
 
-                     
-                          try {
-                            if (variables.containsKey((IDENT2!=null?IDENT2.getText():null)))
-                              throw new Exception("boolean dec; already declared variable "+(IDENT2!=null?IDENT2.getText():null));
-                            variables.put((IDENT2!=null?IDENT2.getText():null), new Boolean(false)); 
-                          } catch(Exception ex) {
-                            BFlatGUI.debugPrint(0, ex.getMessage());
-                          }
-                        
+                     scope.add((IDENT2!=null?IDENT2.getText():null), new Boolean(false)); 
 
                     }
                     break;
@@ -251,22 +235,22 @@ public class EvaluatorWalker extends TreeParser {
 
 
     // $ANTLR start "assignment"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:46:1: assignment : ^( '=' IDENT e= expression ) ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:28:1: assignment : ^( '=' IDENT e= expression ) ;
     public final void assignment() throws RecognitionException {
         CommonTree IDENT3=null;
         Object e =null;
 
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:47:3: ( ^( '=' IDENT e= expression ) )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:47:5: ^( '=' IDENT e= expression )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:29:3: ( ^( '=' IDENT e= expression ) )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:29:5: ^( '=' IDENT e= expression )
             {
-            match(input,28,FOLLOW_28_in_assignment128); 
+            match(input,28,FOLLOW_28_in_assignment119); 
 
             match(input, Token.DOWN, null); 
-            IDENT3=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_assignment130); 
+            IDENT3=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_assignment121); 
 
-            pushFollow(FOLLOW_expression_in_assignment134);
+            pushFollow(FOLLOW_expression_in_assignment125);
             e=expression();
 
             state._fsp--;
@@ -275,20 +259,7 @@ public class EvaluatorWalker extends TreeParser {
             match(input, Token.UP, null); 
 
 
-             
-            	    try {
-            		    if (!variables.containsKey((IDENT3!=null?IDENT3.getText():null)))
-            		      throw new Exception("undeclared variable "+(IDENT3!=null?IDENT3.getText():null));
-            		    String varclass = variables.get((IDENT3!=null?IDENT3.getText():null)).getClass().getName(),
-            		      expclass = e.getClass().getName();
-            		    if (!varclass.equals(expclass))
-            		      throw new Exception("unexpected type: "+(IDENT3!=null?IDENT3.getText():null)+" is "+varclass+" but was expecting "+expclass);
-            		    variables.put((IDENT3!=null?IDENT3.getText():null), e); 
-            		    BFlatGUI.debugPrint(1, (IDENT3!=null?IDENT3.getText():null)+" : "+e);
-            	    } catch(Exception ex) {
-            	      BFlatGUI.debugPrint(0, "assignment; "+ex.getMessage());
-            	    }
-                
+             scope.set((IDENT3!=null?IDENT3.getText():null), e); 
 
             }
 
@@ -308,7 +279,7 @@ public class EvaluatorWalker extends TreeParser {
 
 
     // $ANTLR start "expression"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:64:1: expression returns [Object result] : ( ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( NEGATION op1= expression ) | ^( '||' op1= expression op2= expression ) | ^( '&&' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | INTEGER | BOOL | IDENT );
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:32:1: expression returns [Object result] : ( ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( NEGATION op1= expression ) | ^( '||' op1= expression op2= expression ) | ^( '&&' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | INTEGER | BOOL | IDENT );
     public final Object expression() throws RecognitionException {
         Object result = null;
 
@@ -322,7 +293,7 @@ public class EvaluatorWalker extends TreeParser {
 
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:65:3: ( ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( NEGATION op1= expression ) | ^( '||' op1= expression op2= expression ) | ^( '&&' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | INTEGER | BOOL | IDENT )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:33:3: ( ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( NEGATION op1= expression ) | ^( '||' op1= expression op2= expression ) | ^( '&&' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | INTEGER | BOOL | IDENT )
             int alt4=17;
             switch ( input.LA(1) ) {
             case 23:
@@ -420,18 +391,18 @@ public class EvaluatorWalker extends TreeParser {
 
             switch (alt4) {
                 case 1 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:65:5: ^( '+' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:33:5: ^( '+' op1= expression op2= expression )
                     {
-                    match(input,23,FOLLOW_23_in_expression160); 
+                    match(input,23,FOLLOW_23_in_expression147); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression166);
+                    pushFollow(FOLLOW_expression_in_expression153);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression172);
+                    pushFollow(FOLLOW_expression_in_expression159);
                     op2=expression();
 
                     state._fsp--;
@@ -445,18 +416,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:66:5: ^( '-' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:34:5: ^( '-' op1= expression op2= expression )
                     {
-                    match(input,24,FOLLOW_24_in_expression182); 
+                    match(input,24,FOLLOW_24_in_expression169); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression188);
+                    pushFollow(FOLLOW_expression_in_expression175);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression194);
+                    pushFollow(FOLLOW_expression_in_expression181);
                     op2=expression();
 
                     state._fsp--;
@@ -470,18 +441,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:67:5: ^( '*' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:35:5: ^( '*' op1= expression op2= expression )
                     {
-                    match(input,22,FOLLOW_22_in_expression204); 
+                    match(input,22,FOLLOW_22_in_expression191); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression210);
+                    pushFollow(FOLLOW_expression_in_expression197);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression216);
+                    pushFollow(FOLLOW_expression_in_expression203);
                     op2=expression();
 
                     state._fsp--;
@@ -495,18 +466,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:68:5: ^( '/' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:36:5: ^( '/' op1= expression op2= expression )
                     {
-                    match(input,25,FOLLOW_25_in_expression226); 
+                    match(input,25,FOLLOW_25_in_expression213); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression232);
+                    pushFollow(FOLLOW_expression_in_expression219);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression238);
+                    pushFollow(FOLLOW_expression_in_expression225);
                     op2=expression();
 
                     state._fsp--;
@@ -520,18 +491,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:69:5: ^( '%' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:37:5: ^( '%' op1= expression op2= expression )
                     {
-                    match(input,20,FOLLOW_20_in_expression248); 
+                    match(input,20,FOLLOW_20_in_expression235); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression254);
+                    pushFollow(FOLLOW_expression_in_expression241);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression260);
+                    pushFollow(FOLLOW_expression_in_expression247);
                     op2=expression();
 
                     state._fsp--;
@@ -545,12 +516,12 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:70:5: ^( NEGATION op1= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:38:5: ^( NEGATION op1= expression )
                     {
-                    match(input,NEGATION,FOLLOW_NEGATION_in_expression270); 
+                    match(input,NEGATION,FOLLOW_NEGATION_in_expression257); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression276);
+                    pushFollow(FOLLOW_expression_in_expression263);
                     op1=expression();
 
                     state._fsp--;
@@ -564,18 +535,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:71:5: ^( '||' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:39:5: ^( '||' op1= expression op2= expression )
                     {
-                    match(input,34,FOLLOW_34_in_expression286); 
+                    match(input,34,FOLLOW_34_in_expression273); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression292);
+                    pushFollow(FOLLOW_expression_in_expression279);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression298);
+                    pushFollow(FOLLOW_expression_in_expression285);
                     op2=expression();
 
                     state._fsp--;
@@ -589,18 +560,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:72:5: ^( '&&' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:40:5: ^( '&&' op1= expression op2= expression )
                     {
-                    match(input,21,FOLLOW_21_in_expression308); 
+                    match(input,21,FOLLOW_21_in_expression295); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression314);
+                    pushFollow(FOLLOW_expression_in_expression301);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression320);
+                    pushFollow(FOLLOW_expression_in_expression307);
                     op2=expression();
 
                     state._fsp--;
@@ -614,18 +585,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:73:5: ^( '==' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:41:5: ^( '==' op1= expression op2= expression )
                     {
-                    match(input,29,FOLLOW_29_in_expression330); 
+                    match(input,29,FOLLOW_29_in_expression317); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression336);
+                    pushFollow(FOLLOW_expression_in_expression323);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression342);
+                    pushFollow(FOLLOW_expression_in_expression329);
                     op2=expression();
 
                     state._fsp--;
@@ -639,18 +610,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:74:5: ^( '!=' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:42:5: ^( '!=' op1= expression op2= expression )
                     {
-                    match(input,19,FOLLOW_19_in_expression352); 
+                    match(input,19,FOLLOW_19_in_expression339); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression358);
+                    pushFollow(FOLLOW_expression_in_expression345);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression364);
+                    pushFollow(FOLLOW_expression_in_expression351);
                     op2=expression();
 
                     state._fsp--;
@@ -664,18 +635,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:75:5: ^( '>=' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:43:5: ^( '>=' op1= expression op2= expression )
                     {
-                    match(input,31,FOLLOW_31_in_expression374); 
+                    match(input,31,FOLLOW_31_in_expression361); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression380);
+                    pushFollow(FOLLOW_expression_in_expression367);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression386);
+                    pushFollow(FOLLOW_expression_in_expression373);
                     op2=expression();
 
                     state._fsp--;
@@ -689,18 +660,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:76:5: ^( '<=' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:44:5: ^( '<=' op1= expression op2= expression )
                     {
-                    match(input,27,FOLLOW_27_in_expression396); 
+                    match(input,27,FOLLOW_27_in_expression383); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression402);
+                    pushFollow(FOLLOW_expression_in_expression389);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression408);
+                    pushFollow(FOLLOW_expression_in_expression395);
                     op2=expression();
 
                     state._fsp--;
@@ -714,18 +685,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:77:5: ^( '>' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:45:5: ^( '>' op1= expression op2= expression )
                     {
-                    match(input,30,FOLLOW_30_in_expression418); 
+                    match(input,30,FOLLOW_30_in_expression405); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression424);
+                    pushFollow(FOLLOW_expression_in_expression411);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression430);
+                    pushFollow(FOLLOW_expression_in_expression417);
                     op2=expression();
 
                     state._fsp--;
@@ -739,18 +710,18 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:78:5: ^( '<' op1= expression op2= expression )
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:46:5: ^( '<' op1= expression op2= expression )
                     {
-                    match(input,26,FOLLOW_26_in_expression440); 
+                    match(input,26,FOLLOW_26_in_expression427); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expression_in_expression446);
+                    pushFollow(FOLLOW_expression_in_expression433);
                     op1=expression();
 
                     state._fsp--;
 
 
-                    pushFollow(FOLLOW_expression_in_expression452);
+                    pushFollow(FOLLOW_expression_in_expression439);
                     op2=expression();
 
                     state._fsp--;
@@ -764,35 +735,29 @@ public class EvaluatorWalker extends TreeParser {
                     }
                     break;
                 case 15 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:79:5: INTEGER
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:47:5: INTEGER
                     {
-                    INTEGER4=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_expression461); 
+                    INTEGER4=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_expression448); 
 
                      result = Integer.parseInt((INTEGER4!=null?INTEGER4.getText():null)); 
 
                     }
                     break;
                 case 16 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:80:5: BOOL
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:48:5: BOOL
                     {
-                    BOOL5=(CommonTree)match(input,BOOL,FOLLOW_BOOL_in_expression470); 
+                    BOOL5=(CommonTree)match(input,BOOL,FOLLOW_BOOL_in_expression457); 
 
                      result = Boolean.parseBoolean((BOOL5!=null?BOOL5.getText():null)); 
 
                     }
                     break;
                 case 17 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:81:5: IDENT
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/EvaluatorWalker.g:49:5: IDENT
                     {
-                    IDENT6=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_expression478); 
+                    IDENT6=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_expression465); 
 
-                      
-                          try {
-                            result = (Integer)variables.get((IDENT6!=null?IDENT6.getText():null)); 
-                          } catch(Exception ex) {
-                            BFlatGUI.debugPrint(0, "expression; "+ex.getMessage());
-                          }
-                        
+                     result = scope.get((IDENT6!=null?IDENT6.getText():null)); 
 
                     }
                     break;
@@ -820,54 +785,54 @@ public class EvaluatorWalker extends TreeParser {
     public static final BitSet FOLLOW_assignment_in_evaluator66 = new BitSet(new long[]{0x0000000010000002L});
     public static final BitSet FOLLOW_33_in_declaration85 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IDENT_in_declaration87 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_32_in_declaration102 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_declaration104 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_28_in_assignment128 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_assignment130 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_assignment134 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_23_in_expression160 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression166 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression172 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_24_in_expression182 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression188 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression194 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_22_in_expression204 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression210 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression216 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_25_in_expression226 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression232 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression238 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_20_in_expression248 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression254 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression260 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NEGATION_in_expression270 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression276 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_34_in_expression286 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression292 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression298 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_21_in_expression308 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression314 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression320 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_29_in_expression330 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression336 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression342 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_19_in_expression352 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression358 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression364 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_31_in_expression374 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression380 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression386 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_27_in_expression396 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression402 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression408 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_30_in_expression418 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression424 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression430 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_26_in_expression440 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression446 = new BitSet(new long[]{0x00000004EFF88310L});
-    public static final BitSet FOLLOW_expression_in_expression452 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_INTEGER_in_expression461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOOL_in_expression470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_expression478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_declaration97 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_declaration99 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_28_in_assignment119 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_assignment121 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_assignment125 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_23_in_expression147 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression153 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression159 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_24_in_expression169 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression175 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression181 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_22_in_expression191 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression197 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression203 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_25_in_expression213 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression219 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression225 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_20_in_expression235 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression241 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression247 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NEGATION_in_expression257 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression263 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_34_in_expression273 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression279 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression285 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_21_in_expression295 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression301 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression307 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_29_in_expression317 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression323 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression329 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_19_in_expression339 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression345 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression351 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_31_in_expression361 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression367 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression373 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_27_in_expression383 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression389 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression395 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_30_in_expression405 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression411 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression417 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_26_in_expression427 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression433 = new BitSet(new long[]{0x00000004EFF88310L});
+    public static final BitSet FOLLOW_expression_in_expression439 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_INTEGER_in_expression448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOOL_in_expression457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_expression465 = new BitSet(new long[]{0x0000000000000002L});
 
 }

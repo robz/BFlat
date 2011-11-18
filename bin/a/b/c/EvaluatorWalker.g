@@ -13,7 +13,7 @@ options {
 }
 
 @members {
-  private Map<String, Object> variables = new HashMap <String, Object> ();
+  GrammarTester.Scope scope = new GrammarTester.Scope();
 }
 
 evaluator returns [int result]
@@ -21,44 +21,12 @@ evaluator returns [int result]
   ;
   
 declaration
-  : ^('int' IDENT) 
-    { 
-      try {
-        if (variables.containsKey($IDENT.text))
-          throw new Exception("int dec; already declared variable "+$IDENT.text);
-        variables.put($IDENT.text, new Integer(0)); 
-      } catch(Exception ex) {
-        BFlatGUI.debugPrint(0, ex.getMessage());
-      }
-    }
-  | ^('boolean' IDENT)
-    { 
-      try {
-        if (variables.containsKey($IDENT.text))
-          throw new Exception("boolean dec; already declared variable "+$IDENT.text);
-        variables.put($IDENT.text, new Boolean(false)); 
-      } catch(Exception ex) {
-        BFlatGUI.debugPrint(0, ex.getMessage());
-      }
-    }
+  : ^('int' IDENT) { scope.add($IDENT.text, new Integer(0)); }
+  | ^('boolean' IDENT) { scope.add($IDENT.text, new Boolean(false)); }
   ;  
 
 assignment 
-  : ^('=' IDENT e=expression)
-    { 
-	    try {
-		    if (!variables.containsKey($IDENT.text))
-		      throw new Exception("undeclared variable "+$IDENT.text);
-		    String varclass = variables.get($IDENT.text).getClass().getName(),
-		      expclass = e.getClass().getName();
-		    if (!varclass.equals(expclass))
-		      throw new Exception("unexpected type: "+$IDENT.text+" is "+varclass+" but was expecting "+expclass);
-		    variables.put($IDENT.text, e); 
-		    BFlatGUI.debugPrint(1, $IDENT.text+" : "+e);
-	    } catch(Exception ex) {
-	      BFlatGUI.debugPrint(0, "assignment; "+ex.getMessage());
-	    }
-    }
+  : ^('=' IDENT e=expression) { scope.set($IDENT.text, e); }
   ;
 
 expression returns [Object result] 
@@ -78,12 +46,5 @@ expression returns [Object result]
   | ^('<' op1 = expression op2 = expression) { result = ((Integer)op1 < (Integer)op2); }
   | INTEGER { result = Integer.parseInt($INTEGER.text); } 
   | BOOL { result = Boolean.parseBoolean($BOOL.text); }
-  | IDENT 
-    {  
-      try {
-        result = (Integer)variables.get($IDENT.text); 
-      } catch(Exception ex) {
-        BFlatGUI.debugPrint(0, "expression; "+ex.getMessage());
-      }
-    }
+  | IDENT { result = scope.get($IDENT.text); }
   ;

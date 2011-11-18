@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g 2011-11-18 01:52:26
+// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g 2011-11-18 02:19:42
 
   package a.b.c;
 
@@ -652,14 +652,14 @@ public TreeAdaptor getTreeAdaptor() {
             	case 1 :
             	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:6: '+' !
             	    {
-            	    char_literal19=(Token)match(input,23,FOLLOW_23_in_unary194); 
+            	    char_literal19=(Token)match(input,23,FOLLOW_23_in_unary195); 
 
             	    }
             	    break;
             	case 2 :
             	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:13: negation ^
             	    {
-            	    pushFollow(FOLLOW_negation_in_unary199);
+            	    pushFollow(FOLLOW_negation_in_unary200);
             	    negation20=negation();
 
             	    state._fsp--;
@@ -675,7 +675,7 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            pushFollow(FOLLOW_term_in_unary204);
+            pushFollow(FOLLOW_term_in_unary205);
             term21=term();
 
             state._fsp--;
@@ -730,7 +730,7 @@ public TreeAdaptor getTreeAdaptor() {
             // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:50:3: ( '-' -> NEGATION )
             // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:50:5: '-'
             {
-            char_literal22=(Token)match(input,24,FOLLOW_24_in_negation218);  
+            char_literal22=(Token)match(input,24,FOLLOW_24_in_negation219);  
             stream_24.add(char_literal22);
 
 
@@ -814,7 +814,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_unary_in_mult236);
+            pushFollow(FOLLOW_unary_in_mult237);
             unary23=unary();
 
             state._fsp--;
@@ -866,7 +866,7 @@ public TreeAdaptor getTreeAdaptor() {
             	        case 1 :
             	            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:13: '*' ^
             	            {
-            	            char_literal24=(Token)match(input,22,FOLLOW_22_in_mult240); 
+            	            char_literal24=(Token)match(input,22,FOLLOW_22_in_mult241); 
             	            char_literal24_tree = 
             	            (CommonTree)adaptor.create(char_literal24)
             	            ;
@@ -878,7 +878,7 @@ public TreeAdaptor getTreeAdaptor() {
             	        case 2 :
             	            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:20: '/' ^
             	            {
-            	            char_literal25=(Token)match(input,25,FOLLOW_25_in_mult245); 
+            	            char_literal25=(Token)match(input,25,FOLLOW_25_in_mult246); 
             	            char_literal25_tree = 
             	            (CommonTree)adaptor.create(char_literal25)
             	            ;
@@ -890,7 +890,7 @@ public TreeAdaptor getTreeAdaptor() {
             	        case 3 :
             	            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:27: '%' ^
             	            {
-            	            char_literal26=(Token)match(input,20,FOLLOW_20_in_mult250); 
+            	            char_literal26=(Token)match(input,20,FOLLOW_20_in_mult251); 
             	            char_literal26_tree = 
             	            (CommonTree)adaptor.create(char_literal26)
             	            ;
@@ -903,7 +903,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_unary_in_mult254);
+            	    pushFollow(FOLLOW_unary_in_mult255);
             	    unary27=unary();
 
             	    state._fsp--;
@@ -973,7 +973,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_mult_in_add270);
+            pushFollow(FOLLOW_mult_in_add271);
             mult28=mult();
 
             state._fsp--;
@@ -1012,7 +1012,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_mult_in_add282);
+            	    pushFollow(FOLLOW_mult_in_add283);
             	    mult30=mult();
 
             	    state._fsp--;
@@ -1082,7 +1082,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_add_in_relation298);
+            pushFollow(FOLLOW_add_in_relation299);
             add31=add();
 
             state._fsp--;
@@ -1121,7 +1121,7 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_add_in_relation326);
+            	    pushFollow(FOLLOW_add_in_relation327);
             	    add33=add();
 
             	    state._fsp--;
@@ -1191,7 +1191,7 @@ public TreeAdaptor getTreeAdaptor() {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_relation_in_conjunction342);
+            pushFollow(FOLLOW_relation_in_conjunction343);
             relation34=relation();
 
             state._fsp--;
@@ -1213,14 +1213,14 @@ public TreeAdaptor getTreeAdaptor() {
             	case 1 :
             	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:66:15: '&&' ^ relation
             	    {
-            	    string_literal35=(Token)match(input,21,FOLLOW_21_in_conjunction345); 
+            	    string_literal35=(Token)match(input,21,FOLLOW_21_in_conjunction346); 
             	    string_literal35_tree = 
             	    (CommonTree)adaptor.create(string_literal35)
             	    ;
             	    root_0 = (CommonTree)adaptor.becomeRoot(string_literal35_tree, root_0);
 
 
-            	    pushFollow(FOLLOW_relation_in_conjunction348);
+            	    pushFollow(FOLLOW_relation_in_conjunction349);
             	    relation36=relation();
 
             	    state._fsp--;
@@ -1293,7 +1293,7 @@ public TreeAdaptor getTreeAdaptor() {
             // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:5: ( conjunction ( '||' ^ conjunction )* )
             // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:6: conjunction ( '||' ^ conjunction )*
             {
-            pushFollow(FOLLOW_conjunction_in_expression364);
+            pushFollow(FOLLOW_conjunction_in_expression365);
             conjunction37=conjunction();
 
             state._fsp--;
@@ -1315,14 +1315,14 @@ public TreeAdaptor getTreeAdaptor() {
             	case 1 :
             	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:19: '||' ^ conjunction
             	    {
-            	    string_literal38=(Token)match(input,34,FOLLOW_34_in_expression367); 
+            	    string_literal38=(Token)match(input,34,FOLLOW_34_in_expression368); 
             	    string_literal38_tree = 
             	    (CommonTree)adaptor.create(string_literal38)
             	    ;
             	    root_0 = (CommonTree)adaptor.becomeRoot(string_literal38_tree, root_0);
 
 
-            	    pushFollow(FOLLOW_conjunction_in_expression370);
+            	    pushFollow(FOLLOW_conjunction_in_expression371);
             	    conjunction39=conjunction();
 
             	    state._fsp--;
@@ -1387,26 +1387,26 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_RPAR_in_term169 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_INTEGER_in_term175 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_BOOL_in_term179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_unary194 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_negation_in_unary199 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_term_in_unary204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_negation218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unary_in_mult236 = new BitSet(new long[]{0x0000000002500002L});
-    public static final BitSet FOLLOW_22_in_mult240 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_25_in_mult245 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_20_in_mult250 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_unary_in_mult254 = new BitSet(new long[]{0x0000000002500002L});
-    public static final BitSet FOLLOW_mult_in_add270 = new BitSet(new long[]{0x0000000001800002L});
-    public static final BitSet FOLLOW_set_in_add273 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_mult_in_add282 = new BitSet(new long[]{0x0000000001800002L});
-    public static final BitSet FOLLOW_add_in_relation298 = new BitSet(new long[]{0x00000000EC080002L});
-    public static final BitSet FOLLOW_set_in_relation301 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_add_in_relation326 = new BitSet(new long[]{0x00000000EC080002L});
-    public static final BitSet FOLLOW_relation_in_conjunction342 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_conjunction345 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_relation_in_conjunction348 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_conjunction_in_expression364 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_34_in_expression367 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_conjunction_in_expression370 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_23_in_unary195 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_negation_in_unary200 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_term_in_unary205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_negation219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unary_in_mult237 = new BitSet(new long[]{0x0000000002500002L});
+    public static final BitSet FOLLOW_22_in_mult241 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_25_in_mult246 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_20_in_mult251 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_unary_in_mult255 = new BitSet(new long[]{0x0000000002500002L});
+    public static final BitSet FOLLOW_mult_in_add271 = new BitSet(new long[]{0x0000000001800002L});
+    public static final BitSet FOLLOW_set_in_add274 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_mult_in_add283 = new BitSet(new long[]{0x0000000001800002L});
+    public static final BitSet FOLLOW_add_in_relation299 = new BitSet(new long[]{0x00000000EC080002L});
+    public static final BitSet FOLLOW_set_in_relation302 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_add_in_relation327 = new BitSet(new long[]{0x00000000EC080002L});
+    public static final BitSet FOLLOW_relation_in_conjunction343 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_21_in_conjunction346 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_relation_in_conjunction349 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_conjunction_in_expression365 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_34_in_expression368 = new BitSet(new long[]{0x0000000001801310L});
+    public static final BitSet FOLLOW_conjunction_in_expression371 = new BitSet(new long[]{0x0000000400000002L});
 
 }
