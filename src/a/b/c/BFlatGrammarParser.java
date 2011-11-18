@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g 2011-11-18 02:19:42
+// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g 2011-11-18 05:28:03
 
   package a.b.c;
 
@@ -14,7 +14,7 @@ import org.antlr.runtime.tree.*;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class BFlatGrammarParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "BOOL", "COMMENT", "DIGIT", "EOL", "IDENT", "INTEGER", "LBRACE", "LETTER", "LPAR", "MULTILINE_COMMENT", "NEG", "NEGATION", "RBRACE", "RPAR", "WS", "'!='", "'%'", "'&&'", "'*'", "'+'", "'-'", "'/'", "'<'", "'<='", "'='", "'=='", "'>'", "'>='", "'boolean'", "'int'", "'||'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ARITH_NEGATION", "BOOL", "BOOL_NEGATION", "COMMENT", "DIGIT", "EOL", "IDENT", "INTEGER", "LBRACE", "LETTER", "LPAR", "MULTILINE_COMMENT", "RBRACE", "RPAR", "WS", "'!'", "'!='", "'%'", "'&&'", "'*'", "'+'", "','", "'-'", "'/'", "'<'", "'<='", "'='", "'=='", "'>'", "'>='", "'boolean'", "'if'", "'int'", "'||'"
     };
 
     public static final int EOF=-1;
@@ -34,18 +34,21 @@ public class BFlatGrammarParser extends Parser {
     public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
-    public static final int BOOL=4;
-    public static final int COMMENT=5;
-    public static final int DIGIT=6;
-    public static final int EOL=7;
-    public static final int IDENT=8;
-    public static final int INTEGER=9;
-    public static final int LBRACE=10;
-    public static final int LETTER=11;
-    public static final int LPAR=12;
-    public static final int MULTILINE_COMMENT=13;
-    public static final int NEG=14;
-    public static final int NEGATION=15;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int ARITH_NEGATION=4;
+    public static final int BOOL=5;
+    public static final int BOOL_NEGATION=6;
+    public static final int COMMENT=7;
+    public static final int DIGIT=8;
+    public static final int EOL=9;
+    public static final int IDENT=10;
+    public static final int INTEGER=11;
+    public static final int LBRACE=12;
+    public static final int LETTER=13;
+    public static final int LPAR=14;
+    public static final int MULTILINE_COMMENT=15;
     public static final int RBRACE=16;
     public static final int RPAR=17;
     public static final int WS=18;
@@ -84,7 +87,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "program"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:23:1: program : ( declaration )* ( statement )* EOF !;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:1: program : ( declaration )* ( statement )* ;
     public final BFlatGrammarParser.program_return program() throws RecognitionException {
         BFlatGrammarParser.program_return retval = new BFlatGrammarParser.program_return();
         retval.start = input.LT(1);
@@ -92,37 +95,35 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token EOF3=null;
         BFlatGrammarParser.declaration_return declaration1 =null;
 
         BFlatGrammarParser.statement_return statement2 =null;
 
 
-        CommonTree EOF3_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:3: ( ( declaration )* ( statement )* EOF !)
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:5: ( declaration )* ( statement )* EOF !
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:3: ( ( declaration )* ( statement )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:5: ( declaration )* ( statement )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:5: ( declaration )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:5: ( declaration )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0 >= 32 && LA1_0 <= 33)) ) {
+                if ( (LA1_0==34||LA1_0==36) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:5: declaration
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:5: declaration
             	    {
-            	    pushFollow(FOLLOW_declaration_in_program73);
+            	    pushFollow(FOLLOW_declaration_in_program78);
             	    declaration1=declaration();
 
             	    state._fsp--;
@@ -138,22 +139,22 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:18: ( statement )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:18: ( statement )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==IDENT) ) {
+                if ( (LA2_0==IDENT||LA2_0==35) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:18: statement
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:18: statement
             	    {
-            	    pushFollow(FOLLOW_statement_in_program76);
+            	    pushFollow(FOLLOW_statement_in_program81);
             	    statement2=statement();
 
             	    state._fsp--;
@@ -168,8 +169,6 @@ public TreeAdaptor getTreeAdaptor() {
                 }
             } while (true);
 
-
-            EOF3=(Token)match(input,EOF,FOLLOW_EOF_in_program79); 
 
             }
 
@@ -202,7 +201,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "declaration"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:29:1: declaration : ( 'int' ^| 'boolean' ^) IDENT EOL !;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:44:1: declaration : ( 'int' ^| 'boolean' ^) IDENT ( ',' ! IDENT )* EOL !;
     public final BFlatGrammarParser.declaration_return declaration() throws RecognitionException {
         BFlatGrammarParser.declaration_return retval = new BFlatGrammarParser.declaration_return();
         retval.start = input.LT(1);
@@ -210,31 +209,35 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
+        Token string_literal3=null;
         Token string_literal4=null;
-        Token string_literal5=null;
-        Token IDENT6=null;
-        Token EOL7=null;
+        Token IDENT5=null;
+        Token char_literal6=null;
+        Token IDENT7=null;
+        Token EOL8=null;
 
+        CommonTree string_literal3_tree=null;
         CommonTree string_literal4_tree=null;
-        CommonTree string_literal5_tree=null;
-        CommonTree IDENT6_tree=null;
-        CommonTree EOL7_tree=null;
+        CommonTree IDENT5_tree=null;
+        CommonTree char_literal6_tree=null;
+        CommonTree IDENT7_tree=null;
+        CommonTree EOL8_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:30:3: ( ( 'int' ^| 'boolean' ^) IDENT EOL !)
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:30:5: ( 'int' ^| 'boolean' ^) IDENT EOL !
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:3: ( ( 'int' ^| 'boolean' ^) IDENT ( ',' ! IDENT )* EOL !)
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:5: ( 'int' ^| 'boolean' ^) IDENT ( ',' ! IDENT )* EOL !
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:30:5: ( 'int' ^| 'boolean' ^)
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:5: ( 'int' ^| 'boolean' ^)
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==33) ) {
+            if ( (LA3_0==36) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==32) ) {
+            else if ( (LA3_0==34) ) {
                 alt3=2;
             }
             else {
@@ -246,9 +249,21 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt3) {
                 case 1 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:30:6: 'int' ^
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:6: 'int' ^
                     {
-                    string_literal4=(Token)match(input,33,FOLLOW_33_in_declaration97); 
+                    string_literal3=(Token)match(input,36,FOLLOW_36_in_declaration102); 
+                    string_literal3_tree = 
+                    (CommonTree)adaptor.create(string_literal3)
+                    ;
+                    root_0 = (CommonTree)adaptor.becomeRoot(string_literal3_tree, root_0);
+
+
+                    }
+                    break;
+                case 2 :
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:15: 'boolean' ^
+                    {
+                    string_literal4=(Token)match(input,34,FOLLOW_34_in_declaration107); 
                     string_literal4_tree = 
                     (CommonTree)adaptor.create(string_literal4)
                     ;
@@ -257,30 +272,51 @@ public TreeAdaptor getTreeAdaptor() {
 
                     }
                     break;
-                case 2 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:30:15: 'boolean' ^
-                    {
-                    string_literal5=(Token)match(input,32,FOLLOW_32_in_declaration102); 
-                    string_literal5_tree = 
-                    (CommonTree)adaptor.create(string_literal5)
-                    ;
-                    root_0 = (CommonTree)adaptor.becomeRoot(string_literal5_tree, root_0);
-
-
-                    }
-                    break;
 
             }
 
 
-            IDENT6=(Token)match(input,IDENT,FOLLOW_IDENT_in_declaration106); 
-            IDENT6_tree = 
-            (CommonTree)adaptor.create(IDENT6)
+            IDENT5=(Token)match(input,IDENT,FOLLOW_IDENT_in_declaration111); 
+            IDENT5_tree = 
+            (CommonTree)adaptor.create(IDENT5)
             ;
-            adaptor.addChild(root_0, IDENT6_tree);
+            adaptor.addChild(root_0, IDENT5_tree);
 
 
-            EOL7=(Token)match(input,EOL,FOLLOW_EOL_in_declaration108); 
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:33: ( ',' ! IDENT )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( (LA4_0==25) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:34: ',' ! IDENT
+            	    {
+            	    char_literal6=(Token)match(input,25,FOLLOW_25_in_declaration114); 
+
+            	    IDENT7=(Token)match(input,IDENT,FOLLOW_IDENT_in_declaration117); 
+            	    IDENT7_tree = 
+            	    (CommonTree)adaptor.create(IDENT7)
+            	    ;
+            	    adaptor.addChild(root_0, IDENT7_tree);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
+
+
+            EOL8=(Token)match(input,EOL,FOLLOW_EOL_in_declaration121); 
 
             }
 
@@ -313,7 +349,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "statement"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:32:1: statement : assignment EOL !;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:47:1: statement : ( ifStatement | assignment EOL !) ;
     public final BFlatGrammarParser.statement_return statement() throws RecognitionException {
         BFlatGrammarParser.statement_return retval = new BFlatGrammarParser.statement_return();
         retval.start = input.LT(1);
@@ -321,27 +357,68 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token EOL9=null;
-        BFlatGrammarParser.assignment_return assignment8 =null;
+        Token EOL11=null;
+        BFlatGrammarParser.ifStatement_return ifStatement9 =null;
+
+        BFlatGrammarParser.assignment_return assignment10 =null;
 
 
-        CommonTree EOL9_tree=null;
+        CommonTree EOL11_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:33:3: ( assignment EOL !)
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:33:5: assignment EOL !
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:48:3: ( ( ifStatement | assignment EOL !) )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:48:5: ( ifStatement | assignment EOL !)
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_assignment_in_statement121);
-            assignment8=assignment();
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:48:5: ( ifStatement | assignment EOL !)
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA5_0==35) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==IDENT) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
 
-            adaptor.addChild(root_0, assignment8.getTree());
+                throw nvae;
 
-            EOL9=(Token)match(input,EOL,FOLLOW_EOL_in_statement123); 
+            }
+            switch (alt5) {
+                case 1 :
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:48:6: ifStatement
+                    {
+                    pushFollow(FOLLOW_ifStatement_in_statement134);
+                    ifStatement9=ifStatement();
+
+                    state._fsp--;
+
+                    adaptor.addChild(root_0, ifStatement9.getTree());
+
+                    }
+                    break;
+                case 2 :
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:48:20: assignment EOL !
+                    {
+                    pushFollow(FOLLOW_assignment_in_statement138);
+                    assignment10=assignment();
+
+                    state._fsp--;
+
+                    adaptor.addChild(root_0, assignment10.getTree());
+
+                    EOL11=(Token)match(input,EOL,FOLLOW_EOL_in_statement140); 
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -367,6 +444,127 @@ public TreeAdaptor getTreeAdaptor() {
     // $ANTLR end "statement"
 
 
+    public static class ifStatement_return extends ParserRuleReturnScope {
+        CommonTree tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "ifStatement"
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:50:1: ifStatement : ( 'if' ^) LPAR ! expression RPAR ! LBRACE ! ( statement )* RBRACE !;
+    public final BFlatGrammarParser.ifStatement_return ifStatement() throws RecognitionException {
+        BFlatGrammarParser.ifStatement_return retval = new BFlatGrammarParser.ifStatement_return();
+        retval.start = input.LT(1);
+
+
+        CommonTree root_0 = null;
+
+        Token string_literal12=null;
+        Token LPAR13=null;
+        Token RPAR15=null;
+        Token LBRACE16=null;
+        Token RBRACE18=null;
+        BFlatGrammarParser.expression_return expression14 =null;
+
+        BFlatGrammarParser.statement_return statement17 =null;
+
+
+        CommonTree string_literal12_tree=null;
+        CommonTree LPAR13_tree=null;
+        CommonTree RPAR15_tree=null;
+        CommonTree LBRACE16_tree=null;
+        CommonTree RBRACE18_tree=null;
+
+        try {
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:51:5: ( ( 'if' ^) LPAR ! expression RPAR ! LBRACE ! ( statement )* RBRACE !)
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:51:7: ( 'if' ^) LPAR ! expression RPAR ! LBRACE ! ( statement )* RBRACE !
+            {
+            root_0 = (CommonTree)adaptor.nil();
+
+
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:51:7: ( 'if' ^)
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:51:8: 'if' ^
+            {
+            string_literal12=(Token)match(input,35,FOLLOW_35_in_ifStatement157); 
+            string_literal12_tree = 
+            (CommonTree)adaptor.create(string_literal12)
+            ;
+            root_0 = (CommonTree)adaptor.becomeRoot(string_literal12_tree, root_0);
+
+
+            }
+
+
+            LPAR13=(Token)match(input,LPAR,FOLLOW_LPAR_in_ifStatement161); 
+
+            pushFollow(FOLLOW_expression_in_ifStatement164);
+            expression14=expression();
+
+            state._fsp--;
+
+            adaptor.addChild(root_0, expression14.getTree());
+
+            RPAR15=(Token)match(input,RPAR,FOLLOW_RPAR_in_ifStatement166); 
+
+            LBRACE16=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_ifStatement169); 
+
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:51:46: ( statement )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( (LA6_0==IDENT||LA6_0==35) ) {
+                    alt6=1;
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:51:46: statement
+            	    {
+            	    pushFollow(FOLLOW_statement_in_ifStatement172);
+            	    statement17=statement();
+
+            	    state._fsp--;
+
+            	    adaptor.addChild(root_0, statement17.getTree());
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
+
+
+            RBRACE18=(Token)match(input,RBRACE,FOLLOW_RBRACE_in_ifStatement176); 
+
+            }
+
+            retval.stop = input.LT(-1);
+
+
+            retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (CommonTree)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return retval;
+    }
+    // $ANTLR end "ifStatement"
+
+
     public static class assignment_return extends ParserRuleReturnScope {
         CommonTree tree;
         public Object getTree() { return tree; }
@@ -374,7 +572,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "assignment"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:35:1: assignment : IDENT ( '=' ^) expression ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:1: assignment : IDENT ( '=' ^) expression ;
     public final BFlatGrammarParser.assignment_return assignment() throws RecognitionException {
         BFlatGrammarParser.assignment_return retval = new BFlatGrammarParser.assignment_return();
         retval.start = input.LT(1);
@@ -382,47 +580,47 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token IDENT10=null;
-        Token char_literal11=null;
-        BFlatGrammarParser.expression_return expression12 =null;
+        Token IDENT19=null;
+        Token char_literal20=null;
+        BFlatGrammarParser.expression_return expression21 =null;
 
 
-        CommonTree IDENT10_tree=null;
-        CommonTree char_literal11_tree=null;
+        CommonTree IDENT19_tree=null;
+        CommonTree char_literal20_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:36:3: ( IDENT ( '=' ^) expression )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:36:5: IDENT ( '=' ^) expression
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:55:3: ( IDENT ( '=' ^) expression )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:55:5: IDENT ( '=' ^) expression
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            IDENT10=(Token)match(input,IDENT,FOLLOW_IDENT_in_assignment134); 
-            IDENT10_tree = 
-            (CommonTree)adaptor.create(IDENT10)
+            IDENT19=(Token)match(input,IDENT,FOLLOW_IDENT_in_assignment193); 
+            IDENT19_tree = 
+            (CommonTree)adaptor.create(IDENT19)
             ;
-            adaptor.addChild(root_0, IDENT10_tree);
+            adaptor.addChild(root_0, IDENT19_tree);
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:36:11: ( '=' ^)
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:36:12: '=' ^
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:55:11: ( '=' ^)
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:55:12: '=' ^
             {
-            char_literal11=(Token)match(input,28,FOLLOW_28_in_assignment137); 
-            char_literal11_tree = 
-            (CommonTree)adaptor.create(char_literal11)
+            char_literal20=(Token)match(input,30,FOLLOW_30_in_assignment196); 
+            char_literal20_tree = 
+            (CommonTree)adaptor.create(char_literal20)
             ;
-            root_0 = (CommonTree)adaptor.becomeRoot(char_literal11_tree, root_0);
+            root_0 = (CommonTree)adaptor.becomeRoot(char_literal20_tree, root_0);
 
 
             }
 
 
-            pushFollow(FOLLOW_expression_in_assignment141);
-            expression12=expression();
+            pushFollow(FOLLOW_expression_in_assignment200);
+            expression21=expression();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, expression12.getTree());
+            adaptor.addChild(root_0, expression21.getTree());
 
             }
 
@@ -455,7 +653,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "term"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:41:1: term : ( IDENT | ( LPAR ! expression RPAR !) | INTEGER | BOOL );
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:60:1: term : ( IDENT | ( LPAR ! expression RPAR !) | INTEGER | BOOL );
     public final BFlatGrammarParser.term_return term() throws RecognitionException {
         BFlatGrammarParser.term_return retval = new BFlatGrammarParser.term_return();
         retval.start = input.LT(1);
@@ -463,87 +661,87 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token IDENT13=null;
-        Token LPAR14=null;
-        Token RPAR16=null;
-        Token INTEGER17=null;
-        Token BOOL18=null;
-        BFlatGrammarParser.expression_return expression15 =null;
+        Token IDENT22=null;
+        Token LPAR23=null;
+        Token RPAR25=null;
+        Token INTEGER26=null;
+        Token BOOL27=null;
+        BFlatGrammarParser.expression_return expression24 =null;
 
 
-        CommonTree IDENT13_tree=null;
-        CommonTree LPAR14_tree=null;
-        CommonTree RPAR16_tree=null;
-        CommonTree INTEGER17_tree=null;
-        CommonTree BOOL18_tree=null;
+        CommonTree IDENT22_tree=null;
+        CommonTree LPAR23_tree=null;
+        CommonTree RPAR25_tree=null;
+        CommonTree INTEGER26_tree=null;
+        CommonTree BOOL27_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:3: ( IDENT | ( LPAR ! expression RPAR !) | INTEGER | BOOL )
-            int alt4=4;
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:3: ( IDENT | ( LPAR ! expression RPAR !) | INTEGER | BOOL )
+            int alt7=4;
             switch ( input.LA(1) ) {
             case IDENT:
                 {
-                alt4=1;
+                alt7=1;
                 }
                 break;
             case LPAR:
                 {
-                alt4=2;
+                alt7=2;
                 }
                 break;
             case INTEGER:
                 {
-                alt4=3;
+                alt7=3;
                 }
                 break;
             case BOOL:
                 {
-                alt4=4;
+                alt7=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
 
             }
 
-            switch (alt4) {
+            switch (alt7) {
                 case 1 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:5: IDENT
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:5: IDENT
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    IDENT13=(Token)match(input,IDENT,FOLLOW_IDENT_in_term159); 
-                    IDENT13_tree = 
-                    (CommonTree)adaptor.create(IDENT13)
+                    IDENT22=(Token)match(input,IDENT,FOLLOW_IDENT_in_term218); 
+                    IDENT22_tree = 
+                    (CommonTree)adaptor.create(IDENT22)
                     ;
-                    adaptor.addChild(root_0, IDENT13_tree);
+                    adaptor.addChild(root_0, IDENT22_tree);
 
 
                     }
                     break;
                 case 2 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:13: ( LPAR ! expression RPAR !)
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:13: ( LPAR ! expression RPAR !)
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:13: ( LPAR ! expression RPAR !)
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:14: LPAR ! expression RPAR !
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:13: ( LPAR ! expression RPAR !)
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:14: LPAR ! expression RPAR !
                     {
-                    LPAR14=(Token)match(input,LPAR,FOLLOW_LPAR_in_term164); 
+                    LPAR23=(Token)match(input,LPAR,FOLLOW_LPAR_in_term223); 
 
-                    pushFollow(FOLLOW_expression_in_term167);
-                    expression15=expression();
+                    pushFollow(FOLLOW_expression_in_term226);
+                    expression24=expression();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, expression15.getTree());
+                    adaptor.addChild(root_0, expression24.getTree());
 
-                    RPAR16=(Token)match(input,RPAR,FOLLOW_RPAR_in_term169); 
+                    RPAR25=(Token)match(input,RPAR,FOLLOW_RPAR_in_term228); 
 
                     }
 
@@ -551,31 +749,31 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 3 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:40: INTEGER
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:40: INTEGER
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    INTEGER17=(Token)match(input,INTEGER,FOLLOW_INTEGER_in_term175); 
-                    INTEGER17_tree = 
-                    (CommonTree)adaptor.create(INTEGER17)
+                    INTEGER26=(Token)match(input,INTEGER,FOLLOW_INTEGER_in_term234); 
+                    INTEGER26_tree = 
+                    (CommonTree)adaptor.create(INTEGER26)
                     ;
-                    adaptor.addChild(root_0, INTEGER17_tree);
+                    adaptor.addChild(root_0, INTEGER26_tree);
 
 
                     }
                     break;
                 case 4 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:42:50: BOOL
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:50: BOOL
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
 
-                    BOOL18=(Token)match(input,BOOL,FOLLOW_BOOL_in_term179); 
-                    BOOL18_tree = 
-                    (CommonTree)adaptor.create(BOOL18)
+                    BOOL27=(Token)match(input,BOOL,FOLLOW_BOOL_in_term238); 
+                    BOOL27_tree = 
+                    (CommonTree)adaptor.create(BOOL27)
                     ;
-                    adaptor.addChild(root_0, BOOL18_tree);
+                    adaptor.addChild(root_0, BOOL27_tree);
 
 
                     }
@@ -611,7 +809,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "unary"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:45:1: unary : ( '+' !| negation ^)* term ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:64:1: unary : ( '+' !| arithNegation ^| boolNegation ^)* term ;
     public final BFlatGrammarParser.unary_return unary() throws RecognitionException {
         BFlatGrammarParser.unary_return retval = new BFlatGrammarParser.unary_return();
         retval.start = input.LT(1);
@@ -619,68 +817,91 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token char_literal19=null;
-        BFlatGrammarParser.negation_return negation20 =null;
+        Token char_literal28=null;
+        BFlatGrammarParser.arithNegation_return arithNegation29 =null;
 
-        BFlatGrammarParser.term_return term21 =null;
+        BFlatGrammarParser.boolNegation_return boolNegation30 =null;
+
+        BFlatGrammarParser.term_return term31 =null;
 
 
-        CommonTree char_literal19_tree=null;
+        CommonTree char_literal28_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:3: ( ( '+' !| negation ^)* term )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:5: ( '+' !| negation ^)* term
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:3: ( ( '+' !| arithNegation ^| boolNegation ^)* term )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:5: ( '+' !| arithNegation ^| boolNegation ^)* term
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:5: ( '+' !| negation ^)*
-            loop5:
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:5: ( '+' !| arithNegation ^| boolNegation ^)*
+            loop8:
             do {
-                int alt5=3;
-                int LA5_0 = input.LA(1);
+                int alt8=4;
+                switch ( input.LA(1) ) {
+                case 24:
+                    {
+                    alt8=1;
+                    }
+                    break;
+                case 26:
+                    {
+                    alt8=2;
+                    }
+                    break;
+                case 19:
+                    {
+                    alt8=3;
+                    }
+                    break;
 
-                if ( (LA5_0==23) ) {
-                    alt5=1;
                 }
-                else if ( (LA5_0==24) ) {
-                    alt5=2;
-                }
 
-
-                switch (alt5) {
+                switch (alt8) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:6: '+' !
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:6: '+' !
             	    {
-            	    char_literal19=(Token)match(input,23,FOLLOW_23_in_unary195); 
+            	    char_literal28=(Token)match(input,24,FOLLOW_24_in_unary255); 
 
             	    }
             	    break;
             	case 2 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:46:13: negation ^
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:13: arithNegation ^
             	    {
-            	    pushFollow(FOLLOW_negation_in_unary200);
-            	    negation20=negation();
+            	    pushFollow(FOLLOW_arithNegation_in_unary260);
+            	    arithNegation29=arithNegation();
 
             	    state._fsp--;
 
-            	    root_0 = (CommonTree)adaptor.becomeRoot(negation20.getTree(), root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(arithNegation29.getTree(), root_0);
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:30: boolNegation ^
+            	    {
+            	    pushFollow(FOLLOW_boolNegation_in_unary265);
+            	    boolNegation30=boolNegation();
+
+            	    state._fsp--;
+
+            	    root_0 = (CommonTree)adaptor.becomeRoot(boolNegation30.getTree(), root_0);
 
             	    }
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop8;
                 }
             } while (true);
 
 
-            pushFollow(FOLLOW_term_in_unary205);
-            term21=term();
+            pushFollow(FOLLOW_term_in_unary270);
+            term31=term();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, term21.getTree());
+            adaptor.addChild(root_0, term31.getTree());
 
             }
 
@@ -706,32 +927,32 @@ public TreeAdaptor getTreeAdaptor() {
     // $ANTLR end "unary"
 
 
-    public static class negation_return extends ParserRuleReturnScope {
+    public static class boolNegation_return extends ParserRuleReturnScope {
         CommonTree tree;
         public Object getTree() { return tree; }
     };
 
 
-    // $ANTLR start "negation"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:49:1: negation : '-' -> NEGATION ;
-    public final BFlatGrammarParser.negation_return negation() throws RecognitionException {
-        BFlatGrammarParser.negation_return retval = new BFlatGrammarParser.negation_return();
+    // $ANTLR start "boolNegation"
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:68:1: boolNegation : '!' -> BOOL_NEGATION ;
+    public final BFlatGrammarParser.boolNegation_return boolNegation() throws RecognitionException {
+        BFlatGrammarParser.boolNegation_return retval = new BFlatGrammarParser.boolNegation_return();
         retval.start = input.LT(1);
 
 
         CommonTree root_0 = null;
 
-        Token char_literal22=null;
+        Token char_literal32=null;
 
-        CommonTree char_literal22_tree=null;
-        RewriteRuleTokenStream stream_24=new RewriteRuleTokenStream(adaptor,"token 24");
+        CommonTree char_literal32_tree=null;
+        RewriteRuleTokenStream stream_19=new RewriteRuleTokenStream(adaptor,"token 19");
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:50:3: ( '-' -> NEGATION )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:50:5: '-'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:69:3: ( '!' -> BOOL_NEGATION )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:69:5: '!'
             {
-            char_literal22=(Token)match(input,24,FOLLOW_24_in_negation219);  
-            stream_24.add(char_literal22);
+            char_literal32=(Token)match(input,19,FOLLOW_19_in_boolNegation283);  
+            stream_19.add(char_literal32);
 
 
             // AST REWRITE
@@ -745,10 +966,10 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 50:9: -> NEGATION
+            // 69:9: -> BOOL_NEGATION
             {
                 adaptor.addChild(root_0, 
-                (CommonTree)adaptor.create(NEGATION, "NEGATION")
+                (CommonTree)adaptor.create(BOOL_NEGATION, "BOOL_NEGATION")
                 );
 
             }
@@ -777,7 +998,81 @@ public TreeAdaptor getTreeAdaptor() {
         }
         return retval;
     }
-    // $ANTLR end "negation"
+    // $ANTLR end "boolNegation"
+
+
+    public static class arithNegation_return extends ParserRuleReturnScope {
+        CommonTree tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "arithNegation"
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:72:1: arithNegation : '-' -> ARITH_NEGATION ;
+    public final BFlatGrammarParser.arithNegation_return arithNegation() throws RecognitionException {
+        BFlatGrammarParser.arithNegation_return retval = new BFlatGrammarParser.arithNegation_return();
+        retval.start = input.LT(1);
+
+
+        CommonTree root_0 = null;
+
+        Token char_literal33=null;
+
+        CommonTree char_literal33_tree=null;
+        RewriteRuleTokenStream stream_26=new RewriteRuleTokenStream(adaptor,"token 26");
+
+        try {
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:73:3: ( '-' -> ARITH_NEGATION )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:73:5: '-'
+            {
+            char_literal33=(Token)match(input,26,FOLLOW_26_in_arithNegation303);  
+            stream_26.add(char_literal33);
+
+
+            // AST REWRITE
+            // elements: 
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+            root_0 = (CommonTree)adaptor.nil();
+            // 73:9: -> ARITH_NEGATION
+            {
+                adaptor.addChild(root_0, 
+                (CommonTree)adaptor.create(ARITH_NEGATION, "ARITH_NEGATION")
+                );
+
+            }
+
+
+            retval.tree = root_0;
+
+            }
+
+            retval.stop = input.LT(-1);
+
+
+            retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (CommonTree)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return retval;
+    }
+    // $ANTLR end "arithNegation"
 
 
     public static class mult_return extends ParserRuleReturnScope {
@@ -787,7 +1082,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "mult"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:53:1: mult : unary ( ( '*' ^| '/' ^| '%' ^) unary )* ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:76:1: mult : unary ( ( '*' | '/' | '%' ) ^ unary )* ;
     public final BFlatGrammarParser.mult_return mult() throws RecognitionException {
         BFlatGrammarParser.mult_return retval = new BFlatGrammarParser.mult_return();
         retval.start = input.LT(1);
@@ -795,126 +1090,72 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token char_literal24=null;
-        Token char_literal25=null;
-        Token char_literal26=null;
-        BFlatGrammarParser.unary_return unary23 =null;
+        Token set35=null;
+        BFlatGrammarParser.unary_return unary34 =null;
 
-        BFlatGrammarParser.unary_return unary27 =null;
+        BFlatGrammarParser.unary_return unary36 =null;
 
 
-        CommonTree char_literal24_tree=null;
-        CommonTree char_literal25_tree=null;
-        CommonTree char_literal26_tree=null;
+        CommonTree set35_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:3: ( unary ( ( '*' ^| '/' ^| '%' ^) unary )* )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:5: unary ( ( '*' ^| '/' ^| '%' ^) unary )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:3: ( unary ( ( '*' | '/' | '%' ) ^ unary )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:5: unary ( ( '*' | '/' | '%' ) ^ unary )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_unary_in_mult237);
-            unary23=unary();
+            pushFollow(FOLLOW_unary_in_mult322);
+            unary34=unary();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, unary23.getTree());
+            adaptor.addChild(root_0, unary34.getTree());
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:11: ( ( '*' ^| '/' ^| '%' ^) unary )*
-            loop7:
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:11: ( ( '*' | '/' | '%' ) ^ unary )*
+            loop9:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA7_0==20||LA7_0==22||LA7_0==25) ) {
-                    alt7=1;
+                if ( (LA9_0==21||LA9_0==23||LA9_0==27) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt9) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:12: ( '*' ^| '/' ^| '%' ^) unary
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:12: ( '*' | '/' | '%' ) ^ unary
             	    {
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:12: ( '*' ^| '/' ^| '%' ^)
-            	    int alt6=3;
-            	    switch ( input.LA(1) ) {
-            	    case 22:
-            	        {
-            	        alt6=1;
-            	        }
-            	        break;
-            	    case 25:
-            	        {
-            	        alt6=2;
-            	        }
-            	        break;
-            	    case 20:
-            	        {
-            	        alt6=3;
-            	        }
-            	        break;
-            	    default:
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 6, 0, input);
+            	    set35=(Token)input.LT(1);
 
-            	        throw nvae;
+            	    set35=(Token)input.LT(1);
 
+            	    if ( input.LA(1)==21||input.LA(1)==23||input.LA(1)==27 ) {
+            	        input.consume();
+            	        root_0 = (CommonTree)adaptor.becomeRoot(
+            	        (CommonTree)adaptor.create(set35)
+            	        , root_0);
+            	        state.errorRecovery=false;
             	    }
-
-            	    switch (alt6) {
-            	        case 1 :
-            	            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:13: '*' ^
-            	            {
-            	            char_literal24=(Token)match(input,22,FOLLOW_22_in_mult241); 
-            	            char_literal24_tree = 
-            	            (CommonTree)adaptor.create(char_literal24)
-            	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(char_literal24_tree, root_0);
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:20: '/' ^
-            	            {
-            	            char_literal25=(Token)match(input,25,FOLLOW_25_in_mult246); 
-            	            char_literal25_tree = 
-            	            (CommonTree)adaptor.create(char_literal25)
-            	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(char_literal25_tree, root_0);
-
-
-            	            }
-            	            break;
-            	        case 3 :
-            	            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:54:27: '%' ^
-            	            {
-            	            char_literal26=(Token)match(input,20,FOLLOW_20_in_mult251); 
-            	            char_literal26_tree = 
-            	            (CommonTree)adaptor.create(char_literal26)
-            	            ;
-            	            root_0 = (CommonTree)adaptor.becomeRoot(char_literal26_tree, root_0);
-
-
-            	            }
-            	            break;
-
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        throw mse;
             	    }
 
 
-            	    pushFollow(FOLLOW_unary_in_mult255);
-            	    unary27=unary();
+            	    pushFollow(FOLLOW_unary_in_mult338);
+            	    unary36=unary();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, unary27.getTree());
+            	    adaptor.addChild(root_0, unary36.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop9;
                 }
             } while (true);
 
@@ -950,7 +1191,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "add"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:57:1: add : mult ( ( '+' | '-' ) ^ mult )* ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:80:1: add : mult ( ( '+' | '-' ) ^ mult )* ;
     public final BFlatGrammarParser.add_return add() throws RecognitionException {
         BFlatGrammarParser.add_return retval = new BFlatGrammarParser.add_return();
         retval.start = input.LT(1);
@@ -958,51 +1199,51 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set29=null;
-        BFlatGrammarParser.mult_return mult28 =null;
+        Token set38=null;
+        BFlatGrammarParser.mult_return mult37 =null;
 
-        BFlatGrammarParser.mult_return mult30 =null;
+        BFlatGrammarParser.mult_return mult39 =null;
 
 
-        CommonTree set29_tree=null;
+        CommonTree set38_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:58:3: ( mult ( ( '+' | '-' ) ^ mult )* )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:58:5: mult ( ( '+' | '-' ) ^ mult )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:81:3: ( mult ( ( '+' | '-' ) ^ mult )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:81:5: mult ( ( '+' | '-' ) ^ mult )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_mult_in_add271);
-            mult28=mult();
+            pushFollow(FOLLOW_mult_in_add354);
+            mult37=mult();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, mult28.getTree());
+            adaptor.addChild(root_0, mult37.getTree());
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:58:10: ( ( '+' | '-' ) ^ mult )*
-            loop8:
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:81:10: ( ( '+' | '-' ) ^ mult )*
+            loop10:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( ((LA8_0 >= 23 && LA8_0 <= 24)) ) {
-                    alt8=1;
+                if ( (LA10_0==24||LA10_0==26) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt10) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:58:11: ( '+' | '-' ) ^ mult
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:81:11: ( '+' | '-' ) ^ mult
             	    {
-            	    set29=(Token)input.LT(1);
+            	    set38=(Token)input.LT(1);
 
-            	    set29=(Token)input.LT(1);
+            	    set38=(Token)input.LT(1);
 
-            	    if ( (input.LA(1) >= 23 && input.LA(1) <= 24) ) {
+            	    if ( input.LA(1)==24||input.LA(1)==26 ) {
             	        input.consume();
             	        root_0 = (CommonTree)adaptor.becomeRoot(
-            	        (CommonTree)adaptor.create(set29)
+            	        (CommonTree)adaptor.create(set38)
             	        , root_0);
             	        state.errorRecovery=false;
             	    }
@@ -1012,18 +1253,18 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_mult_in_add283);
-            	    mult30=mult();
+            	    pushFollow(FOLLOW_mult_in_add366);
+            	    mult39=mult();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, mult30.getTree());
+            	    adaptor.addChild(root_0, mult39.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop10;
                 }
             } while (true);
 
@@ -1059,7 +1300,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "relation"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:61:1: relation : add ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )* ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:84:1: relation : add ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )* ;
     public final BFlatGrammarParser.relation_return relation() throws RecognitionException {
         BFlatGrammarParser.relation_return retval = new BFlatGrammarParser.relation_return();
         retval.start = input.LT(1);
@@ -1067,51 +1308,51 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token set32=null;
-        BFlatGrammarParser.add_return add31 =null;
+        Token set41=null;
+        BFlatGrammarParser.add_return add40 =null;
 
-        BFlatGrammarParser.add_return add33 =null;
+        BFlatGrammarParser.add_return add42 =null;
 
 
-        CommonTree set32_tree=null;
+        CommonTree set41_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:62:3: ( add ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )* )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:62:5: add ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:85:3: ( add ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:85:5: add ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_add_in_relation299);
-            add31=add();
+            pushFollow(FOLLOW_add_in_relation382);
+            add40=add();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, add31.getTree());
+            adaptor.addChild(root_0, add40.getTree());
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:62:9: ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )*
-            loop9:
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:85:9: ( ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add )*
+            loop11:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA9_0==19||(LA9_0 >= 26 && LA9_0 <= 27)||(LA9_0 >= 29 && LA9_0 <= 31)) ) {
-                    alt9=1;
+                if ( (LA11_0==20||(LA11_0 >= 28 && LA11_0 <= 29)||(LA11_0 >= 31 && LA11_0 <= 33)) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt11) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:62:10: ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:85:10: ( '<' | '>' | '<=' | '>=' | '==' | '!=' ) ^ add
             	    {
-            	    set32=(Token)input.LT(1);
+            	    set41=(Token)input.LT(1);
 
-            	    set32=(Token)input.LT(1);
+            	    set41=(Token)input.LT(1);
 
-            	    if ( input.LA(1)==19||(input.LA(1) >= 26 && input.LA(1) <= 27)||(input.LA(1) >= 29 && input.LA(1) <= 31) ) {
+            	    if ( input.LA(1)==20||(input.LA(1) >= 28 && input.LA(1) <= 29)||(input.LA(1) >= 31 && input.LA(1) <= 33) ) {
             	        input.consume();
             	        root_0 = (CommonTree)adaptor.becomeRoot(
-            	        (CommonTree)adaptor.create(set32)
+            	        (CommonTree)adaptor.create(set41)
             	        , root_0);
             	        state.errorRecovery=false;
             	    }
@@ -1121,18 +1362,18 @@ public TreeAdaptor getTreeAdaptor() {
             	    }
 
 
-            	    pushFollow(FOLLOW_add_in_relation327);
-            	    add33=add();
+            	    pushFollow(FOLLOW_add_in_relation410);
+            	    add42=add();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, add33.getTree());
+            	    adaptor.addChild(root_0, add42.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop11;
                 }
             } while (true);
 
@@ -1168,7 +1409,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "conjunction"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:65:1: conjunction : relation ( '&&' ^ relation )* ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:88:1: conjunction : relation ( '&&' ^ relation )* ;
     public final BFlatGrammarParser.conjunction_return conjunction() throws RecognitionException {
         BFlatGrammarParser.conjunction_return retval = new BFlatGrammarParser.conjunction_return();
         retval.start = input.LT(1);
@@ -1176,62 +1417,62 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token string_literal35=null;
-        BFlatGrammarParser.relation_return relation34 =null;
+        Token string_literal44=null;
+        BFlatGrammarParser.relation_return relation43 =null;
 
-        BFlatGrammarParser.relation_return relation36 =null;
+        BFlatGrammarParser.relation_return relation45 =null;
 
 
-        CommonTree string_literal35_tree=null;
+        CommonTree string_literal44_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:66:3: ( relation ( '&&' ^ relation )* )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:66:5: relation ( '&&' ^ relation )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:89:3: ( relation ( '&&' ^ relation )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:89:5: relation ( '&&' ^ relation )*
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            pushFollow(FOLLOW_relation_in_conjunction343);
-            relation34=relation();
+            pushFollow(FOLLOW_relation_in_conjunction426);
+            relation43=relation();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, relation34.getTree());
+            adaptor.addChild(root_0, relation43.getTree());
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:66:14: ( '&&' ^ relation )*
-            loop10:
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:89:14: ( '&&' ^ relation )*
+            loop12:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA10_0==21) ) {
-                    alt10=1;
+                if ( (LA12_0==22) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt12) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:66:15: '&&' ^ relation
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:89:15: '&&' ^ relation
             	    {
-            	    string_literal35=(Token)match(input,21,FOLLOW_21_in_conjunction346); 
-            	    string_literal35_tree = 
-            	    (CommonTree)adaptor.create(string_literal35)
+            	    string_literal44=(Token)match(input,22,FOLLOW_22_in_conjunction429); 
+            	    string_literal44_tree = 
+            	    (CommonTree)adaptor.create(string_literal44)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(string_literal35_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(string_literal44_tree, root_0);
 
 
-            	    pushFollow(FOLLOW_relation_in_conjunction349);
-            	    relation36=relation();
+            	    pushFollow(FOLLOW_relation_in_conjunction432);
+            	    relation45=relation();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, relation36.getTree());
+            	    adaptor.addChild(root_0, relation45.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop12;
                 }
             } while (true);
 
@@ -1267,7 +1508,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "expression"
-    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:69:1: expression : ( conjunction ( '||' ^ conjunction )* ) ;
+    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:92:1: expression : ( conjunction ( '||' ^ conjunction )* ) ;
     public final BFlatGrammarParser.expression_return expression() throws RecognitionException {
         BFlatGrammarParser.expression_return retval = new BFlatGrammarParser.expression_return();
         retval.start = input.LT(1);
@@ -1275,65 +1516,65 @@ public TreeAdaptor getTreeAdaptor() {
 
         CommonTree root_0 = null;
 
-        Token string_literal38=null;
-        BFlatGrammarParser.conjunction_return conjunction37 =null;
+        Token string_literal47=null;
+        BFlatGrammarParser.conjunction_return conjunction46 =null;
 
-        BFlatGrammarParser.conjunction_return conjunction39 =null;
+        BFlatGrammarParser.conjunction_return conjunction48 =null;
 
 
-        CommonTree string_literal38_tree=null;
+        CommonTree string_literal47_tree=null;
 
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:3: ( ( conjunction ( '||' ^ conjunction )* ) )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:5: ( conjunction ( '||' ^ conjunction )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:93:3: ( ( conjunction ( '||' ^ conjunction )* ) )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:93:5: ( conjunction ( '||' ^ conjunction )* )
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:5: ( conjunction ( '||' ^ conjunction )* )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:6: conjunction ( '||' ^ conjunction )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:93:5: ( conjunction ( '||' ^ conjunction )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:93:6: conjunction ( '||' ^ conjunction )*
             {
-            pushFollow(FOLLOW_conjunction_in_expression365);
-            conjunction37=conjunction();
+            pushFollow(FOLLOW_conjunction_in_expression448);
+            conjunction46=conjunction();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, conjunction37.getTree());
+            adaptor.addChild(root_0, conjunction46.getTree());
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:18: ( '||' ^ conjunction )*
-            loop11:
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:93:18: ( '||' ^ conjunction )*
+            loop13:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA11_0==34) ) {
-                    alt11=1;
+                if ( (LA13_0==37) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt13) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:70:19: '||' ^ conjunction
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:93:19: '||' ^ conjunction
             	    {
-            	    string_literal38=(Token)match(input,34,FOLLOW_34_in_expression368); 
-            	    string_literal38_tree = 
-            	    (CommonTree)adaptor.create(string_literal38)
+            	    string_literal47=(Token)match(input,37,FOLLOW_37_in_expression451); 
+            	    string_literal47_tree = 
+            	    (CommonTree)adaptor.create(string_literal47)
             	    ;
-            	    root_0 = (CommonTree)adaptor.becomeRoot(string_literal38_tree, root_0);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(string_literal47_tree, root_0);
 
 
-            	    pushFollow(FOLLOW_conjunction_in_expression371);
-            	    conjunction39=conjunction();
+            	    pushFollow(FOLLOW_conjunction_in_expression454);
+            	    conjunction48=conjunction();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, conjunction39.getTree());
+            	    adaptor.addChild(root_0, conjunction48.getTree());
 
             	    }
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop13;
                 }
             } while (true);
 
@@ -1369,44 +1610,53 @@ public TreeAdaptor getTreeAdaptor() {
 
  
 
-    public static final BitSet FOLLOW_declaration_in_program73 = new BitSet(new long[]{0x0000000300000100L});
-    public static final BitSet FOLLOW_statement_in_program76 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_EOF_in_program79 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_declaration97 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_32_in_declaration102 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_IDENT_in_declaration106 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_EOL_in_declaration108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_assignment_in_statement121 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_EOL_in_statement123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_assignment134 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_assignment137 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_expression_in_assignment141 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_term159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPAR_in_term164 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_expression_in_term167 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_RPAR_in_term169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INTEGER_in_term175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOOL_in_term179 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_unary195 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_negation_in_unary200 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_term_in_unary205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_negation219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unary_in_mult237 = new BitSet(new long[]{0x0000000002500002L});
-    public static final BitSet FOLLOW_22_in_mult241 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_25_in_mult246 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_20_in_mult251 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_unary_in_mult255 = new BitSet(new long[]{0x0000000002500002L});
-    public static final BitSet FOLLOW_mult_in_add271 = new BitSet(new long[]{0x0000000001800002L});
-    public static final BitSet FOLLOW_set_in_add274 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_mult_in_add283 = new BitSet(new long[]{0x0000000001800002L});
-    public static final BitSet FOLLOW_add_in_relation299 = new BitSet(new long[]{0x00000000EC080002L});
-    public static final BitSet FOLLOW_set_in_relation302 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_add_in_relation327 = new BitSet(new long[]{0x00000000EC080002L});
-    public static final BitSet FOLLOW_relation_in_conjunction343 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_conjunction346 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_relation_in_conjunction349 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_conjunction_in_expression365 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_34_in_expression368 = new BitSet(new long[]{0x0000000001801310L});
-    public static final BitSet FOLLOW_conjunction_in_expression371 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_declaration_in_program78 = new BitSet(new long[]{0x0000001C00000402L});
+    public static final BitSet FOLLOW_statement_in_program81 = new BitSet(new long[]{0x0000000800000402L});
+    public static final BitSet FOLLOW_36_in_declaration102 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_34_in_declaration107 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_IDENT_in_declaration111 = new BitSet(new long[]{0x0000000002000200L});
+    public static final BitSet FOLLOW_25_in_declaration114 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_IDENT_in_declaration117 = new BitSet(new long[]{0x0000000002000200L});
+    public static final BitSet FOLLOW_EOL_in_declaration121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ifStatement_in_statement134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_assignment_in_statement138 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_EOL_in_statement140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ifStatement157 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_LPAR_in_ifStatement161 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_expression_in_ifStatement164 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_RPAR_in_ifStatement166 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_LBRACE_in_ifStatement169 = new BitSet(new long[]{0x0000000800010400L});
+    public static final BitSet FOLLOW_statement_in_ifStatement172 = new BitSet(new long[]{0x0000000800010400L});
+    public static final BitSet FOLLOW_RBRACE_in_ifStatement176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_assignment193 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30_in_assignment196 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_expression_in_assignment200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_term218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPAR_in_term223 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_expression_in_term226 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_RPAR_in_term228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INTEGER_in_term234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOOL_in_term238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_unary255 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_arithNegation_in_unary260 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_boolNegation_in_unary265 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_term_in_unary270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_boolNegation283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_arithNegation303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unary_in_mult322 = new BitSet(new long[]{0x0000000008A00002L});
+    public static final BitSet FOLLOW_set_in_mult325 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_unary_in_mult338 = new BitSet(new long[]{0x0000000008A00002L});
+    public static final BitSet FOLLOW_mult_in_add354 = new BitSet(new long[]{0x0000000005000002L});
+    public static final BitSet FOLLOW_set_in_add357 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_mult_in_add366 = new BitSet(new long[]{0x0000000005000002L});
+    public static final BitSet FOLLOW_add_in_relation382 = new BitSet(new long[]{0x00000003B0100002L});
+    public static final BitSet FOLLOW_set_in_relation385 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_add_in_relation410 = new BitSet(new long[]{0x00000003B0100002L});
+    public static final BitSet FOLLOW_relation_in_conjunction426 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_22_in_conjunction429 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_relation_in_conjunction432 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_conjunction_in_expression448 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_37_in_expression451 = new BitSet(new long[]{0x0000000005084C20L});
+    public static final BitSet FOLLOW_conjunction_in_expression454 = new BitSet(new long[]{0x0000002000000002L});
 
 }

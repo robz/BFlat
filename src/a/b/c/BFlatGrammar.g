@@ -7,7 +7,8 @@ options {
 }
 
 tokens {
-  NEGATION;
+  ARITH_NEGATION;
+  BOOL_NEGATION;
 }
 
 @header {
@@ -21,16 +22,34 @@ tokens {
 /* Top level */
 
 program
-  : declaration* statement* EOF!
+  : declaration* statement*
   ;
+
+/* future use
+program
+  : 'function'! IDENT! (type?)! LPAR! (typeSignature?)! RPAR! LBRACE!
+        declaration* statement*
+      RBRACE! EOF!
+  ;
+
+typeSignature : parameter (',' parameter)*;
+
+parameter : type IDENT; 
+
+type : 'int' | 'bool';
+*/
 
 /* meh... */
 
 declaration
-  : ('int'^ | 'boolean'^) IDENT EOL!;
-  
+  : ('int'^ | 'boolean'^) IDENT (','! IDENT)* EOL!;
+ 
 statement
-  : assignment EOL!;
+  : (ifStatement | assignment EOL!);
+  
+ifStatement
+    : ('if'^) LPAR! expression RPAR! LBRACE! statement*  RBRACE! 
+    ;
 
 assignment
   : IDENT ('='^) expression 
@@ -41,17 +60,21 @@ assignment
 term 
   : IDENT | (LPAR! expression RPAR!) | INTEGER | BOOL
   ;
- 
+  
 unary 
-  : ('+'! | negation^)* term
+  : ('+'! | arithNegation^ | boolNegation^)* term
   ;
 
-negation 
-  : '-' -> NEGATION
+boolNegation
+  : '!' -> BOOL_NEGATION
+  ;
+  
+arithNegation 
+  : '-' -> ARITH_NEGATION 
   ;
 
 mult 
-  : unary (('*'^ | '/'^ | '%'^) unary)*
+  : unary (('*' | '/' | '%')^ unary)*
   ;
 
 add 
@@ -82,7 +105,6 @@ IDENT : LETTER(LETTER|DIGIT)*;
 
 //INCRE : '++';
 //DECRE : '--';
-NEG : '!';
 
 /* Tokens */
 EOL : ';';

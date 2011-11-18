@@ -73,19 +73,19 @@ public class BFlatGUI {
 		String[][] strs = new String[][]
 		{
 				{"Program","Stack","Symbol Table"},
-				{"int x;\n" + 
-				"int y;\n" + 
-				"int z;\n" + 
-				"boolean f;\n" + 
-				"x = 5+4-3*2/1%6;\n" + 
-				"y = x+4-x*2/1%x;\n" + 
-				"z = x+y-x*y/y%x;\n" + 
-				"f = (x>(y-1))==(z>y);","<stack>","<symbol table>"}
+				{"int x,y,z;\n" + 
+						"boolean f,g;\n" + 
+						"x = 5+4-3*2/1%6;\n" + 
+						"y = x+4-x*2/1%x;\n" + 
+						"z = x+y-x*y/y%x;\n" + 
+						"f = (x==y) && !(x!=y) || (x>=z) && (x>z) || !(y<=z) && (y<z);\n" + 
+						"g = false || true && !true;",
+				"<stack>","<symbol table>"}
 		};
 		
 		public IDEPane() {
 			Border border = BorderFactory.createMatteBorder(4, 4, 4, 4, Color.blue);
-			Font font1 = new Font("Courier New", Font.BOLD, 20),
+			Font font1 = new Font("Courier New", Font.PLAIN, 15),
 				font2 = new Font("Courier New", Font.BOLD, 40);
 			
 			setLayout(new BorderLayout());
@@ -125,7 +125,7 @@ public class BFlatGUI {
 				jc.setFont(font2);
 			}
 		}
-		// "x = 4; y = 2+3; 3 * (-x + y) * 4"
+		
 		public void actionPerformed(ActionEvent e) {
 			clearDebug();
 			
@@ -133,9 +133,13 @@ public class BFlatGUI {
 			ProgramInfo info = new ProgramInfo(str);
 			try { 
 				GrammarTester.parseProgram(info);
+				//tx[1].setText(TreePrinter.treePrint(info.treeText));
+				//System.out.println(TreePrinter.treePrint(info.treeText));
 				tx[1].setText(info.treeText);
+				GrammarTester.scope = new GrammarTester.Scope();
 				GrammarTester.runProgram(info); 
 				tx[2].setText(""+info.result);
+				tx[2].append(GrammarTester.scope.toString());
 			} catch (Exception ex) {}
 		}
 	}

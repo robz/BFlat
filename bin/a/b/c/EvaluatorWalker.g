@@ -12,39 +12,50 @@ options {
   import java.util.HashMap;
 }
 
-@members {
-  GrammarTester.Scope scope = new GrammarTester.Scope();
-}
-
 evaluator returns [int result]
-  : declaration* assignment* {result = 1;}
+  : declaration* (ifStatement | assignment)* {result = 1;}
   ;
   
 declaration
-  : ^('int' IDENT) { scope.add($IDENT.text, new Integer(0)); }
-  | ^('boolean' IDENT) { scope.add($IDENT.text, new Boolean(false)); }
+  : ^('int' (IDENT { GrammarTester.scope.add($IDENT.text, new Integer(0)); })+)
+  | ^('boolean'(IDENT { GrammarTester.scope.add($IDENT.text, new Boolean(false)); })+)
   ;  
+  
+ifStatement
+  : ^('if' e=expression .) {
+      if ((Boolean)e) {
+        CommonTree blockRoot = (CommonTree)($ifStatement.start.getChild(2));
+      }
+    }
+  ;
+
 
 assignment 
-  : ^('=' IDENT e=expression) { scope.set($IDENT.text, e); }
+  : ^('=' IDENT e=expression) { GrammarTester.scope.set($IDENT.text, e); }
   ;
 
 expression returns [Object result] 
-  : ^('+' op1 = expression op2 = expression) { result = (Integer)op1 + (Integer)op2; }
-  | ^('-' op1 = expression op2 = expression) { result = (Integer)op1 - (Integer)op2; }
-  | ^('*' op1 = expression op2 = expression) { result = (Integer)op1 * (Integer)op2; }
-  | ^('/' op1 = expression op2 = expression) { result = (Integer)op1 / (Integer)op2; }
-  | ^('%' op1 = expression op2 = expression) { result = (Integer)op1 \% (Integer)op2; }
-  | ^(NEGATION op1 = expression) { result = -(Integer)op1; }
-  | ^('||' op1 = expression op2 = expression) { result = ((Boolean)op1 || (Boolean)op2); }
-  | ^('&&' op1 = expression op2 = expression) { result = ((Boolean)op1 && (Boolean)op2); }
-  | ^('==' op1 = expression op2 = expression) { result = op1.equals(op2); }
-  | ^('!=' op1 = expression op2 = expression) { result = !op1.equals(op2); }
-  | ^('>=' op1 = expression op2 = expression) { result = ((Integer)op1 >= (Integer)op2); }
-  | ^('<=' op1 = expression op2 = expression) { result = ((Integer)op1 <= (Integer)op2); }
-  | ^('>' op1 = expression op2 = expression) { result = ((Integer)op1 > (Integer)op2); }
-  | ^('<' op1 = expression op2 = expression) { result = ((Integer)op1 < (Integer)op2); }
-  | INTEGER { result = Integer.parseInt($INTEGER.text); } 
-  | BOOL { result = Boolean.parseBoolean($BOOL.text); }
-  | IDENT { result = scope.get($IDENT.text); }
+  : 
+  {OperationExecuter oe = null;}
+  (
+  ^('+' op1 = expression op2 = expression)    { oe = new OperationExecuter(op1,op2,"+"); }
+  | ^('-' op1 = expression op2 = expression)  { oe = new OperationExecuter(op1,op2,"-"); }
+  | ^('*' op1 = expression op2 = expression)  { oe = new OperationExecuter(op1,op2,"*"); }
+  | ^('/' op1 = expression op2 = expression)  { oe = new OperationExecuter(op1,op2,"/"); }
+  | ^('%' op1 = expression op2 = expression)  { oe = new OperationExecuter(op1,op2,"\%"); }
+  | ^(ARITH_NEGATION op1 = expression)        { oe = new OperationExecuter(op1,null,"ARITH_NEGATION"); }
+  | ^('||' op1 = expression op2 = expression) { oe = new OperationExecuter(op1,op2,"||"); }
+  | ^('&&' op1 = expression op2 = expression) { oe = new OperationExecuter(op1,op2,"&&"); }
+  | ^('==' op1 = expression op2 = expression) { oe = new OperationExecuter(op1,op2,"=="); }
+  | ^('!=' op1 = expression op2 = expression) { oe = new OperationExecuter(op1,op2,"!="); }
+  | ^('>=' op1 = expression op2 = expression) { oe = new OperationExecuter(op1,op2,">="); }
+  | ^('<=' op1 = expression op2 = expression) { oe = new OperationExecuter(op1,op2,"<="); }
+  | ^('>' op1 = expression op2 = expression)  { oe = new OperationExecuter(op1,op2,">"); }
+  | ^('<' op1 = expression op2 = expression)  { oe = new OperationExecuter(op1,op2,"<"); }
+  | ^(BOOL_NEGATION op1 = expression)         { oe = new OperationExecuter(op1,null,"BOOL_NEGATION"); }
+  | INTEGER                                   { oe = new OperationExecuter($INTEGER.text,"INTEGER"); } 
+  | BOOL                                      { oe = new OperationExecuter($BOOL.text,"BOOL"); }
+  | IDENT                                     { oe = new OperationExecuter($IDENT.text,"IDENT"); }
+  )
+  {result = oe.doOperation();} 
   ;

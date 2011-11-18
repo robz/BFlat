@@ -1,7 +1,6 @@
 package a.b.c;
 
-
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,20 +14,11 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import a.b.c.BFlatGrammarParser.program_return;
 
 public class GrammarTester {
+	static Scope scope = new Scope();
 	
 	public static void main(String[] args) throws RecognitionException {
-		//BFlatGUI.makeGUI();
-		ProgramInfo[] testCases = new ProgramInfo[]{
-				new ProgramInfo("int x; x = 3;", "(int x) (= x 3)"),
-				new ProgramInfo("int x; x = 3;", "(int x) (= x 3)")};
-		
-		for(ProgramInfo testCase:testCases) {
-			ProgramInfo runCase = new ProgramInfo(testCase.programText);
-			parseProgram(runCase);
-			System.out.println("TestCase: \n"+testCase.toString()+"\nRunCase: \n"+runCase.toString());
-			boolean isGood = testCase.treeText.equals(runCase.treeText);
-			System.out.println("Test cases equal? "+isGood);
-		}
+		BFlatGUI.makeGUI();
+		//runTestCases(false);
 	}
 	
 	public static void parseProgram(ProgramInfo pi) throws RecognitionException {
@@ -60,6 +50,7 @@ public class GrammarTester {
 				if (variables.containsKey(var))
 					throw new Exception("dec; already declared variable "+var);
 		        variables.put(var, val); 
+			    BFlatGUI.debugPrint(1, var+" is now "+val);
 			} catch(Exception ex) {
 				BFlatGUI.debugPrint(0, ex.getMessage());
 				return false;
@@ -79,7 +70,7 @@ public class GrammarTester {
 			    if (!varclass.equals(expclass))
 			    	throw new Exception("unexpected type: "+var+" is "+varclass+" but was expecting "+expclass);
 			    variables.put(var, val); 
-			    BFlatGUI.debugPrint(1, var+" : "+val);
+			    BFlatGUI.debugPrint(1, var+" is now "+val);
 		    } catch(Exception ex) {
 		    	BFlatGUI.debugPrint(0, "assignment; "+ex.getMessage());
 		    	return false;
@@ -93,6 +84,13 @@ public class GrammarTester {
 		public Object get(String var) {
 			Object result = variables.get(var); 
 			return result;
+		}
+		
+		public String toString() {
+			String str = "\n\n\n~Current Program Scope~\n\n";
+			for(String var : variables.keySet()) 
+				str += var+"\t"+variables.get(var)+"\n";
+			return str;
 		}
 	}
 	
@@ -121,5 +119,73 @@ public class GrammarTester {
 			return (programText.equals(arg0.programText))
 					&& (treeText.equals(arg0.treeText));
 		}
+	}
+
+	public static void runTestCases(boolean verbose) throws RecognitionException
+	{
+		ProgramInfo[] testCases = new ProgramInfo[] {
+				new ProgramInfo("int x; x = 3;",
+								"(int x) (= x 3)"),
+								
+				new ProgramInfo("int x; x = -x;", 
+								"(int x) (= x (ARITH_NEGATION x))"),	
+								
+				new ProgramInfo("int y; y = 5;",
+								"(int y) (= y 5)"),
+								
+				new ProgramInfo("int x; x = 3; x = x + x;",
+								"(int x) (= x 3) (= x (+ x x))"),
+								
+				new ProgramInfo("int x; int y; x = 3; y = 2; x = x + x; y = x % y;", 
+								"(int x) (int y) (= x 3) (= y 2) (= x (+ x x)) (= y (% x y))"),
+								
+				new ProgramInfo("boolean x; x = false;", 
+								"(boolean x) (= x false)"),
+				
+				new ProgramInfo("boolean x; boolean y; x = false; y = true; x = x && y;", 
+								"(boolean x) (boolean y) (= x false) (= y true) (= x (&& x y))"),
+				
+				new ProgramInfo("int x; boolean y; x = 1; y = true; y = x > x || x > x - 1;", 
+								"(int x) (boolean y) (= x 1) (= y true) (= y (|| (> x x) (> x (- x 1))))"),
+								
+				new ProgramInfo("boolean x; boolean y; x = false; y = false; x = x || y && y || x;", 
+								"(boolean x) (boolean y) (= x false) (= y false) (= x (|| (|| x (&& y y)) x))"),
+				
+				new ProgramInfo("int x; boolean y; x = 7; y = x == 7 && x != 6;", 
+								"(int x) (boolean y) (= x 7) (= y (&& (== x 7) (!= x 6)))"),
+								
+				new ProgramInfo("int x,y,z;\n" + 
+								"boolean f,g;\n" + 
+								"x = 5+4-3*2/1%6;\n" + 
+								"y = x+4-x*2/1%x;\n" + 
+								"z = x+y-x*y/y%x;\n" + 
+								"f = (x==y) && !(x!=y) || (x>=z) && (x>z) || !(y<=z) && (y<z);\n" + 
+								"g = false || true && !true;\n" + 
+								"if(g){x = 3;}", 
+								"(int x y z) (boolean f g) (= x (- (+ 5 4) (% (/ (* 3 2) 1) 6))) (= y (- (+ x 4) (% (/ (* x 2) 1) x))) (= z (- (+ x y) (% (/ (* x y) y) x))) (= f (|| (|| (&& (== x y) (BOOL_NEGATION (!= x y))) (&& (>= x z) (> x z))) (&& (BOOL_NEGATION (<= y z)) (< y z)))) (= g (|| false (&& true (BOOL_NEGATION true)))) (if g (= x 3))")
+		};
+		
+		int index = 0;
+		ArrayList<Integer> failedCases = new ArrayList<Integer>();
+		for(ProgramInfo testCase:testCases)
+		{
+			ProgramInfo runCase = new ProgramInfo(testCase.programText);
+			parseProgram(runCase);
+			
+			System.out.println("\n" + index + ".");
+			if(verbose)
+				System.out.println("TestCase: "+ testCase.toString() + "\nRunCase: " +runCase.toString());
+			
+			boolean isGood = testCase.treeText.equals(runCase.treeText);
+			System.out.println("Test cases equal? "+isGood);
+			
+			if(!isGood)
+				failedCases.add(index);
+			
+			index++;
+		}
+		
+		System.out.println("\nIndices of failed cases: "+failedCases);
+		System.out.println(testCases.length - failedCases.size() + "/" + testCases.length + " correct.");
 	}
 }

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g 2011-11-18 02:19:43
+// $ANTLR 3.4 /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g 2011-11-18 05:28:04
 
   package a.b.c;
 
@@ -27,18 +27,21 @@ public class BFlatGrammarLexer extends Lexer {
     public static final int T__32=32;
     public static final int T__33=33;
     public static final int T__34=34;
-    public static final int BOOL=4;
-    public static final int COMMENT=5;
-    public static final int DIGIT=6;
-    public static final int EOL=7;
-    public static final int IDENT=8;
-    public static final int INTEGER=9;
-    public static final int LBRACE=10;
-    public static final int LETTER=11;
-    public static final int LPAR=12;
-    public static final int MULTILINE_COMMENT=13;
-    public static final int NEG=14;
-    public static final int NEGATION=15;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int T__37=37;
+    public static final int ARITH_NEGATION=4;
+    public static final int BOOL=5;
+    public static final int BOOL_NEGATION=6;
+    public static final int COMMENT=7;
+    public static final int DIGIT=8;
+    public static final int EOL=9;
+    public static final int IDENT=10;
+    public static final int INTEGER=11;
+    public static final int LBRACE=12;
+    public static final int LETTER=13;
+    public static final int LPAR=14;
+    public static final int MULTILINE_COMMENT=15;
     public static final int RBRACE=16;
     public static final int RPAR=17;
     public static final int WS=18;
@@ -63,12 +66,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:11:7: ( '!=' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:11:9: '!='
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:11:7: ( '!' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:11:9: '!'
             {
-            match("!="); 
-
-
+            match('!'); 
 
             }
 
@@ -86,10 +87,12 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:12:7: ( '%' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:12:9: '%'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:12:7: ( '!=' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:12:9: '!='
             {
-            match('%'); 
+            match("!="); 
+
+
 
             }
 
@@ -107,12 +110,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:13:7: ( '&&' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:13:9: '&&'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:13:7: ( '%' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:13:9: '%'
             {
-            match("&&"); 
-
-
+            match('%'); 
 
             }
 
@@ -130,10 +131,12 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:14:7: ( '*' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:14:9: '*'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:14:7: ( '&&' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:14:9: '&&'
             {
-            match('*'); 
+            match("&&"); 
+
+
 
             }
 
@@ -151,10 +154,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:15:7: ( '+' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:15:9: '+'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:15:7: ( '*' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:15:9: '*'
             {
-            match('+'); 
+            match('*'); 
 
             }
 
@@ -172,10 +175,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:16:7: ( '-' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:16:9: '-'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:16:7: ( '+' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:16:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -193,10 +196,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:17:7: ( '/' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:17:9: '/'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:17:7: ( ',' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:17:9: ','
             {
-            match('/'); 
+            match(','); 
 
             }
 
@@ -214,10 +217,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:18:7: ( '<' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:18:9: '<'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:18:7: ( '-' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:18:9: '-'
             {
-            match('<'); 
+            match('-'); 
 
             }
 
@@ -235,12 +238,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:19:7: ( '<=' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:19:9: '<='
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:19:7: ( '/' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:19:9: '/'
             {
-            match("<="); 
-
-
+            match('/'); 
 
             }
 
@@ -258,10 +259,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:20:7: ( '=' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:20:9: '='
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:20:7: ( '<' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:20:9: '<'
             {
-            match('='); 
+            match('<'); 
 
             }
 
@@ -279,10 +280,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:21:7: ( '==' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:21:9: '=='
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:21:7: ( '<=' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:21:9: '<='
             {
-            match("=="); 
+            match("<="); 
 
 
 
@@ -302,10 +303,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:22:7: ( '>' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:22:9: '>'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:22:7: ( '=' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:22:9: '='
             {
-            match('>'); 
+            match('='); 
 
             }
 
@@ -323,10 +324,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:23:7: ( '>=' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:23:9: '>='
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:23:7: ( '==' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:23:9: '=='
             {
-            match(">="); 
+            match("=="); 
 
 
 
@@ -346,12 +347,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:7: ( 'boolean' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:9: 'boolean'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:7: ( '>' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:24:9: '>'
             {
-            match("boolean"); 
-
-
+            match('>'); 
 
             }
 
@@ -369,10 +368,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:7: ( 'int' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:9: 'int'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:7: ( '>=' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:25:9: '>='
             {
-            match("int"); 
+            match(">="); 
 
 
 
@@ -392,10 +391,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:26:7: ( '||' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:26:9: '||'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:26:7: ( 'boolean' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:26:9: 'boolean'
             {
-            match("||"); 
+            match("boolean"); 
 
 
 
@@ -410,10 +409,79 @@ public class BFlatGrammarLexer extends Lexer {
     }
     // $ANTLR end "T__34"
 
+    // $ANTLR start "T__35"
+    public final void mT__35() throws RecognitionException {
+        try {
+            int _type = T__35;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:27:7: ( 'if' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:27:9: 'if'
+            {
+            match("if"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__35"
+
+    // $ANTLR start "T__36"
+    public final void mT__36() throws RecognitionException {
+        try {
+            int _type = T__36;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:28:7: ( 'int' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:28:9: 'int'
+            {
+            match("int"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__36"
+
+    // $ANTLR start "T__37"
+    public final void mT__37() throws RecognitionException {
+        try {
+            int _type = T__37;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:29:7: ( '||' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:29:9: '||'
+            {
+            match("||"); 
+
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        	// do for sure before leaving
+        }
+    }
+    // $ANTLR end "T__37"
+
     // $ANTLR start "LETTER"
     public final void mLETTER() throws RecognitionException {
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:75:17: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:98:17: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
             // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:
             {
             if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -439,7 +507,7 @@ public class BFlatGrammarLexer extends Lexer {
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
         try {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:76:16: ( ( '0' .. '9' ) )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:99:16: ( ( '0' .. '9' ) )
             // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:
             {
             if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
@@ -467,10 +535,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = INTEGER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:9: ( ( DIGIT )+ )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:11: ( DIGIT )+
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:100:9: ( ( DIGIT )+ )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:100:11: ( DIGIT )+
             {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:77:11: ( DIGIT )+
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:100:11: ( DIGIT )+
             int cnt1=0;
             loop1:
             do {
@@ -525,7 +593,7 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = BOOL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:78:6: ( 'true' | 'false' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:101:6: ( 'true' | 'false' )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -544,7 +612,7 @@ public class BFlatGrammarLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:78:8: 'true'
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:101:8: 'true'
                     {
                     match("true"); 
 
@@ -553,7 +621,7 @@ public class BFlatGrammarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:78:17: 'false'
+                    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:101:17: 'false'
                     {
                     match("false"); 
 
@@ -577,13 +645,13 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:79:7: ( LETTER ( LETTER | DIGIT )* )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:79:9: LETTER ( LETTER | DIGIT )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:102:7: ( LETTER ( LETTER | DIGIT )* )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:102:9: LETTER ( LETTER | DIGIT )*
             {
             mLETTER(); 
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:79:15: ( LETTER | DIGIT )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:102:15: ( LETTER | DIGIT )*
             loop3:
             do {
                 int alt3=2;
@@ -628,34 +696,13 @@ public class BFlatGrammarLexer extends Lexer {
     }
     // $ANTLR end "IDENT"
 
-    // $ANTLR start "NEG"
-    public final void mNEG() throws RecognitionException {
-        try {
-            int _type = NEG;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:85:5: ( '!' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:85:7: '!'
-            {
-            match('!'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        	// do for sure before leaving
-        }
-    }
-    // $ANTLR end "NEG"
-
     // $ANTLR start "EOL"
     public final void mEOL() throws RecognitionException {
         try {
             int _type = EOL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:88:5: ( ';' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:88:7: ';'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:110:5: ( ';' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:110:7: ';'
             {
             match(';'); 
 
@@ -675,8 +722,8 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = LPAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:89:6: ( '(' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:89:8: '('
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:111:6: ( '(' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:111:8: '('
             {
             match('('); 
 
@@ -696,8 +743,8 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = RPAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:90:6: ( ')' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:90:8: ')'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:112:6: ( ')' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:112:8: ')'
             {
             match(')'); 
 
@@ -717,8 +764,8 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:91:8: ( '{' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:91:10: '{'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:113:8: ( '{' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:113:10: '{'
             {
             match('{'); 
 
@@ -738,8 +785,8 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:92:8: ( '}' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:92:10: '}'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:114:8: ( '}' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:114:10: '}'
             {
             match('}'); 
 
@@ -759,10 +806,10 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:95:4: ( ( ' ' | '\\r' | '\\n' | '\\f' | '\\t' )+ )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:95:6: ( ' ' | '\\r' | '\\n' | '\\f' | '\\t' )+
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:117:4: ( ( ' ' | '\\r' | '\\n' | '\\f' | '\\t' )+ )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:117:6: ( ' ' | '\\r' | '\\n' | '\\f' | '\\t' )+
             {
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:95:6: ( ' ' | '\\r' | '\\n' | '\\f' | '\\t' )+
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:117:6: ( ' ' | '\\r' | '\\n' | '\\f' | '\\t' )+
             int cnt4=0;
             loop4:
             do {
@@ -819,14 +866,14 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:96:9: ( '//' ( . )* ( '\\r' | '\\n' ) )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:96:11: '//' ( . )* ( '\\r' | '\\n' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:118:9: ( '//' ( . )* ( '\\r' | '\\n' ) )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:118:11: '//' ( . )* ( '\\r' | '\\n' )
             {
             match("//"); 
 
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:96:16: ( . )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:118:16: ( . )*
             loop5:
             do {
                 int alt5=2;
@@ -842,7 +889,7 @@ public class BFlatGrammarLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:96:16: .
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:118:16: .
             	    {
             	    matchAny(); 
 
@@ -883,14 +930,14 @@ public class BFlatGrammarLexer extends Lexer {
         try {
             int _type = MULTILINE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:97:18: ( '/*' ( . )* '*/' )
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:97:20: '/*' ( . )* '*/'
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:119:18: ( '/*' ( . )* '*/' )
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:119:20: '/*' ( . )* '*/'
             {
             match("/*"); 
 
 
 
-            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:97:25: ( . )*
+            // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:119:25: ( . )*
             loop6:
             do {
                 int alt6=2;
@@ -915,7 +962,7 @@ public class BFlatGrammarLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:97:25: .
+            	    // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:119:25: .
             	    {
             	    matchAny(); 
 
@@ -946,44 +993,49 @@ public class BFlatGrammarLexer extends Lexer {
     // $ANTLR end "MULTILINE_COMMENT"
 
     public void mTokens() throws RecognitionException {
-        // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:8: ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | INTEGER | BOOL | IDENT | NEG | EOL | LPAR | RPAR | LBRACE | RBRACE | WS | COMMENT | MULTILINE_COMMENT )
-        int alt7=28;
+        // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:8: ( T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | INTEGER | BOOL | IDENT | EOL | LPAR | RPAR | LBRACE | RBRACE | WS | COMMENT | MULTILINE_COMMENT )
+        int alt7=30;
         switch ( input.LA(1) ) {
         case '!':
             {
             int LA7_1 = input.LA(2);
 
             if ( (LA7_1=='=') ) {
-                alt7=1;
+                alt7=2;
             }
             else {
-                alt7=20;
+                alt7=1;
             }
             }
             break;
         case '%':
             {
-            alt7=2;
+            alt7=3;
             }
             break;
         case '&':
             {
-            alt7=3;
+            alt7=4;
             }
             break;
         case '*':
             {
-            alt7=4;
+            alt7=5;
             }
             break;
         case '+':
             {
-            alt7=5;
+            alt7=6;
+            }
+            break;
+        case ',':
+            {
+            alt7=7;
             }
             break;
         case '-':
             {
-            alt7=6;
+            alt7=8;
             }
             break;
         case '/':
@@ -991,33 +1043,21 @@ public class BFlatGrammarLexer extends Lexer {
             switch ( input.LA(2) ) {
             case '/':
                 {
-                alt7=27;
+                alt7=29;
                 }
                 break;
             case '*':
                 {
-                alt7=28;
+                alt7=30;
                 }
                 break;
             default:
-                alt7=7;
+                alt7=9;
             }
 
             }
             break;
         case '<':
-            {
-            int LA7_8 = input.LA(2);
-
-            if ( (LA7_8=='=') ) {
-                alt7=9;
-            }
-            else {
-                alt7=8;
-            }
-            }
-            break;
-        case '=':
             {
             int LA7_9 = input.LA(2);
 
@@ -1029,7 +1069,7 @@ public class BFlatGrammarLexer extends Lexer {
             }
             }
             break;
-        case '>':
+        case '=':
             {
             int LA7_10 = input.LA(2);
 
@@ -1041,89 +1081,115 @@ public class BFlatGrammarLexer extends Lexer {
             }
             }
             break;
-        case 'b':
+        case '>':
             {
             int LA7_11 = input.LA(2);
 
-            if ( (LA7_11=='o') ) {
-                int LA7_35 = input.LA(3);
+            if ( (LA7_11=='=') ) {
+                alt7=15;
+            }
+            else {
+                alt7=14;
+            }
+            }
+            break;
+        case 'b':
+            {
+            int LA7_12 = input.LA(2);
 
-                if ( (LA7_35=='o') ) {
-                    int LA7_39 = input.LA(4);
+            if ( (LA7_12=='o') ) {
+                int LA7_36 = input.LA(3);
 
-                    if ( (LA7_39=='l') ) {
-                        int LA7_43 = input.LA(5);
+                if ( (LA7_36=='o') ) {
+                    int LA7_41 = input.LA(4);
 
-                        if ( (LA7_43=='e') ) {
-                            int LA7_47 = input.LA(6);
+                    if ( (LA7_41=='l') ) {
+                        int LA7_46 = input.LA(5);
 
-                            if ( (LA7_47=='a') ) {
-                                int LA7_50 = input.LA(7);
+                        if ( (LA7_46=='e') ) {
+                            int LA7_50 = input.LA(6);
 
-                                if ( (LA7_50=='n') ) {
-                                    int LA7_51 = input.LA(8);
+                            if ( (LA7_50=='a') ) {
+                                int LA7_53 = input.LA(7);
 
-                                    if ( ((LA7_51 >= '0' && LA7_51 <= '9')||(LA7_51 >= 'A' && LA7_51 <= 'Z')||(LA7_51 >= 'a' && LA7_51 <= 'z')) ) {
-                                        alt7=19;
+                                if ( (LA7_53=='n') ) {
+                                    int LA7_54 = input.LA(8);
+
+                                    if ( ((LA7_54 >= '0' && LA7_54 <= '9')||(LA7_54 >= 'A' && LA7_54 <= 'Z')||(LA7_54 >= 'a' && LA7_54 <= 'z')) ) {
+                                        alt7=22;
                                     }
                                     else {
-                                        alt7=14;
+                                        alt7=16;
                                     }
                                 }
                                 else {
-                                    alt7=19;
+                                    alt7=22;
                                 }
                             }
                             else {
-                                alt7=19;
+                                alt7=22;
                             }
                         }
                         else {
-                            alt7=19;
+                            alt7=22;
                         }
                     }
                     else {
-                        alt7=19;
+                        alt7=22;
                     }
                 }
                 else {
-                    alt7=19;
+                    alt7=22;
                 }
             }
             else {
-                alt7=19;
+                alt7=22;
             }
             }
             break;
         case 'i':
             {
-            int LA7_12 = input.LA(2);
+            switch ( input.LA(2) ) {
+            case 'f':
+                {
+                int LA7_37 = input.LA(3);
 
-            if ( (LA7_12=='n') ) {
-                int LA7_36 = input.LA(3);
+                if ( ((LA7_37 >= '0' && LA7_37 <= '9')||(LA7_37 >= 'A' && LA7_37 <= 'Z')||(LA7_37 >= 'a' && LA7_37 <= 'z')) ) {
+                    alt7=22;
+                }
+                else {
+                    alt7=17;
+                }
+                }
+                break;
+            case 'n':
+                {
+                int LA7_38 = input.LA(3);
 
-                if ( (LA7_36=='t') ) {
-                    int LA7_40 = input.LA(4);
+                if ( (LA7_38=='t') ) {
+                    int LA7_43 = input.LA(4);
 
-                    if ( ((LA7_40 >= '0' && LA7_40 <= '9')||(LA7_40 >= 'A' && LA7_40 <= 'Z')||(LA7_40 >= 'a' && LA7_40 <= 'z')) ) {
-                        alt7=19;
+                    if ( ((LA7_43 >= '0' && LA7_43 <= '9')||(LA7_43 >= 'A' && LA7_43 <= 'Z')||(LA7_43 >= 'a' && LA7_43 <= 'z')) ) {
+                        alt7=22;
                     }
                     else {
-                        alt7=15;
+                        alt7=18;
                     }
                 }
                 else {
-                    alt7=19;
+                    alt7=22;
                 }
+                }
+                break;
+            default:
+                alt7=22;
             }
-            else {
-                alt7=19;
-            }
+
             }
             break;
         case '|':
             {
-            alt7=16;
+            alt7=19;
             }
             break;
         case '0':
@@ -1137,79 +1203,79 @@ public class BFlatGrammarLexer extends Lexer {
         case '8':
         case '9':
             {
-            alt7=17;
+            alt7=20;
             }
             break;
         case 't':
             {
-            int LA7_15 = input.LA(2);
+            int LA7_16 = input.LA(2);
 
-            if ( (LA7_15=='r') ) {
-                int LA7_37 = input.LA(3);
+            if ( (LA7_16=='r') ) {
+                int LA7_39 = input.LA(3);
 
-                if ( (LA7_37=='u') ) {
-                    int LA7_41 = input.LA(4);
+                if ( (LA7_39=='u') ) {
+                    int LA7_44 = input.LA(4);
 
-                    if ( (LA7_41=='e') ) {
-                        int LA7_45 = input.LA(5);
+                    if ( (LA7_44=='e') ) {
+                        int LA7_48 = input.LA(5);
 
-                        if ( ((LA7_45 >= '0' && LA7_45 <= '9')||(LA7_45 >= 'A' && LA7_45 <= 'Z')||(LA7_45 >= 'a' && LA7_45 <= 'z')) ) {
-                            alt7=19;
+                        if ( ((LA7_48 >= '0' && LA7_48 <= '9')||(LA7_48 >= 'A' && LA7_48 <= 'Z')||(LA7_48 >= 'a' && LA7_48 <= 'z')) ) {
+                            alt7=22;
                         }
                         else {
-                            alt7=18;
+                            alt7=21;
                         }
                     }
                     else {
-                        alt7=19;
+                        alt7=22;
                     }
                 }
                 else {
-                    alt7=19;
+                    alt7=22;
                 }
             }
             else {
-                alt7=19;
+                alt7=22;
             }
             }
             break;
         case 'f':
             {
-            int LA7_16 = input.LA(2);
+            int LA7_17 = input.LA(2);
 
-            if ( (LA7_16=='a') ) {
-                int LA7_38 = input.LA(3);
+            if ( (LA7_17=='a') ) {
+                int LA7_40 = input.LA(3);
 
-                if ( (LA7_38=='l') ) {
-                    int LA7_42 = input.LA(4);
+                if ( (LA7_40=='l') ) {
+                    int LA7_45 = input.LA(4);
 
-                    if ( (LA7_42=='s') ) {
-                        int LA7_46 = input.LA(5);
+                    if ( (LA7_45=='s') ) {
+                        int LA7_49 = input.LA(5);
 
-                        if ( (LA7_46=='e') ) {
-                            int LA7_49 = input.LA(6);
+                        if ( (LA7_49=='e') ) {
+                            int LA7_52 = input.LA(6);
 
-                            if ( ((LA7_49 >= '0' && LA7_49 <= '9')||(LA7_49 >= 'A' && LA7_49 <= 'Z')||(LA7_49 >= 'a' && LA7_49 <= 'z')) ) {
-                                alt7=19;
+                            if ( ((LA7_52 >= '0' && LA7_52 <= '9')||(LA7_52 >= 'A' && LA7_52 <= 'Z')||(LA7_52 >= 'a' && LA7_52 <= 'z')) ) {
+                                alt7=22;
                             }
                             else {
-                                alt7=18;
+                                alt7=21;
                             }
                         }
                         else {
-                            alt7=19;
+                            alt7=22;
                         }
                     }
                     else {
-                        alt7=19;
+                        alt7=22;
                     }
                 }
                 else {
-                    alt7=19;
+                    alt7=22;
                 }
             }
             else {
-                alt7=19;
+                alt7=22;
             }
             }
             break;
@@ -1262,32 +1328,32 @@ public class BFlatGrammarLexer extends Lexer {
         case 'y':
         case 'z':
             {
-            alt7=19;
+            alt7=22;
             }
             break;
         case ';':
             {
-            alt7=21;
+            alt7=23;
             }
             break;
         case '(':
             {
-            alt7=22;
+            alt7=24;
             }
             break;
         case ')':
             {
-            alt7=23;
+            alt7=25;
             }
             break;
         case '{':
             {
-            alt7=24;
+            alt7=26;
             }
             break;
         case '}':
             {
-            alt7=25;
+            alt7=27;
             }
             break;
         case '\t':
@@ -1296,7 +1362,7 @@ public class BFlatGrammarLexer extends Lexer {
         case '\r':
         case ' ':
             {
-            alt7=26;
+            alt7=28;
             }
             break;
         default:
@@ -1437,95 +1503,111 @@ public class BFlatGrammarLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:106: INTEGER
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:106: T__35
+                {
+                mT__35(); 
+
+
+                }
+                break;
+            case 18 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:112: T__36
+                {
+                mT__36(); 
+
+
+                }
+                break;
+            case 19 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:118: T__37
+                {
+                mT__37(); 
+
+
+                }
+                break;
+            case 20 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:124: INTEGER
                 {
                 mINTEGER(); 
 
 
                 }
                 break;
-            case 18 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:114: BOOL
+            case 21 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:132: BOOL
                 {
                 mBOOL(); 
 
 
                 }
                 break;
-            case 19 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:119: IDENT
+            case 22 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:137: IDENT
                 {
                 mIDENT(); 
 
 
                 }
                 break;
-            case 20 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:125: NEG
-                {
-                mNEG(); 
-
-
-                }
-                break;
-            case 21 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:129: EOL
+            case 23 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:143: EOL
                 {
                 mEOL(); 
 
 
                 }
                 break;
-            case 22 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:133: LPAR
+            case 24 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:147: LPAR
                 {
                 mLPAR(); 
 
 
                 }
                 break;
-            case 23 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:138: RPAR
+            case 25 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:152: RPAR
                 {
                 mRPAR(); 
 
 
                 }
                 break;
-            case 24 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:143: LBRACE
+            case 26 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:157: LBRACE
                 {
                 mLBRACE(); 
 
 
                 }
                 break;
-            case 25 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:150: RBRACE
+            case 27 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:164: RBRACE
                 {
                 mRBRACE(); 
 
 
                 }
                 break;
-            case 26 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:157: WS
+            case 28 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:171: WS
                 {
                 mWS(); 
 
 
                 }
                 break;
-            case 27 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:160: COMMENT
+            case 29 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:174: COMMENT
                 {
                 mCOMMENT(); 
 
 
                 }
                 break;
-            case 28 :
-                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:168: MULTILINE_COMMENT
+            case 30 :
+                // /v/filer4b/v38q001/rjnevels/Desktop/Antlr Eclipse Test/workspace/BFlat/src/a/b/c/BFlatGrammar.g:1:182: MULTILINE_COMMENT
                 {
                 mMULTILINE_COMMENT(); 
 
